@@ -12,6 +12,27 @@
           "informationUri": "https://www.glog.ai",
           "rules": [
             {
+              "id": "9d8ac483-fe1b-3ff3-9291-728cb04ea3af",
+              "name": "resources.rules.python.dlint-catastrophic-redos",
+              "shortDescription": {
+                "text": "Opengrep Finding: resources.rules.python.dlint-catastrophic-redos"
+              },
+              "fullDescription": {
+                "text": "Regex `$X` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)"
+              },
+              "defaultConfiguration": {
+                "enabled": true,
+                "level": "error"
+              },
+              "help": {
+                "text": "Regex `$X` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
+                "markdown": "Regex `$X` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>\n\n<b>References:</b>\n - [https://r2c.dev/blog/2020/finding-python-redos-bugs-at-scale-using-dlint-and-r2c/](https://r2c.dev/blog/2020/finding-python-redos-bugs-at-scale-using-dlint-and-r2c/)\n - [https://r2c.dev/blog/2020/improving-redos-detection-with-dlint-and-r2c/](https://r2c.dev/blog/2020/improving-redos-detection-with-dlint-and-r2c/)\n"
+              },
+              "properties": {
+                "precision": "very-high"
+              }
+            },
+            {
               "id": "8ed02f3e-4bf1-3a33-94ae-439d5411415a",
               "name": "resources.rules.python.generic-one-liners",
               "shortDescription": {
@@ -33,21 +54,21 @@
               }
             },
             {
-              "id": "9d8ac483-fe1b-3ff3-9291-728cb04ea3af",
-              "name": "resources.rules.python.dlint-catastrophic-redos",
+              "id": "2ffd144c-0cc1-3003-8e66-ccdfedb605cd",
+              "name": "resources.rules.python.use-defused-xml",
               "shortDescription": {
-                "text": "Opengrep Finding: resources.rules.python.dlint-catastrophic-redos"
+                "text": "Opengrep Finding: resources.rules.python.use-defused-xml"
               },
               "fullDescription": {
-                "text": "Regex `$X` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)"
+                "text": "Found use of the native Python XML libraries, which is vulnerable to XML external entity (XXE)\nattacks. The Python documentation recommends the 'defusedxml' library instead. Use 'defusedxml'.\nSee https://github.com/tiran/defusedxml for more information.\n"
               },
               "defaultConfiguration": {
                 "enabled": true,
                 "level": "error"
               },
               "help": {
-                "text": "Regex `$X` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
-                "markdown": "Regex `$X` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>\n\n<b>References:</b>\n - [https://r2c.dev/blog/2020/finding-python-redos-bugs-at-scale-using-dlint-and-r2c/](https://r2c.dev/blog/2020/finding-python-redos-bugs-at-scale-using-dlint-and-r2c/)\n - [https://r2c.dev/blog/2020/improving-redos-detection-with-dlint-and-r2c/](https://r2c.dev/blog/2020/improving-redos-detection-with-dlint-and-r2c/)\n"
+                "text": "Found use of the native Python XML libraries, which is vulnerable to XML external entity (XXE)\nattacks. The Python documentation recommends the 'defusedxml' library instead. Use 'defusedxml'.\nSee https://github.com/tiran/defusedxml for more information.\n\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
+                "markdown": "Found use of the native Python XML libraries, which is vulnerable to XML external entity (XXE)\nattacks. The Python documentation recommends the 'defusedxml' library instead. Use 'defusedxml'.\nSee https://github.com/tiran/defusedxml for more information.\n\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>\n\n<b>References:</b>\n - [https://docs.python.org/3/library/xml.html](https://docs.python.org/3/library/xml.html)\n - [https://github.com/tiran/defusedxml](https://github.com/tiran/defusedxml)\n"
               },
               "properties": {
                 "precision": "very-high"
@@ -76,62 +97,21 @@
             },
             {
               "id": "c3e53eb6-70f1-3dd8-bd43-7bfd04bf2834",
-              "name": "resources.rules.python.avoid-pickle",
+              "name": "python.lang.security.deserialization.pickle.avoid-pickle",
               "shortDescription": {
-                "text": "Opengrep Finding: resources.rules.python.avoid-pickle"
+                "text": "Opengrep Finding: python.lang.security.deserialization.pickle.avoid-pickle"
               },
               "fullDescription": {
-                "text": "Avoid using `pickle`, which is known to lead to code execution vulnerabilities.\nWhen unpickling, the serialized data could be manipulated to run arbitrary code.\nInstead, consider serializing the relevant data as JSON or a similar text-based\nserialization format.\n"
+                "text": "Avoid using `pickle`, which is known to lead to code execution vulnerabilities. When unpickling, the serialized data could be manipulated to run arbitrary code. Instead, consider serializing the relevant data as JSON or a similar text-based serialization format."
               },
               "defaultConfiguration": {
                 "enabled": true,
                 "level": "warning"
               },
+              "helpUri": "https://semgrep.dev/r/python.lang.security.deserialization.pickle.avoid-pickle",
               "help": {
-                "text": "Avoid using `pickle`, which is known to lead to code execution vulnerabilities.\nWhen unpickling, the serialized data could be manipulated to run arbitrary code.\nInstead, consider serializing the relevant data as JSON or a similar text-based\nserialization format.\n\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
-                "markdown": "Avoid using `pickle`, which is known to lead to code execution vulnerabilities.\nWhen unpickling, the serialized data could be manipulated to run arbitrary code.\nInstead, consider serializing the relevant data as JSON or a similar text-based\nserialization format.\n\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>\n\n<b>References:</b>\n - [https://docs.python.org/3/library/pickle.html](https://docs.python.org/3/library/pickle.html)\n - [https://davidhamann.de/2020/04/05/exploiting-python-pickle/](https://davidhamann.de/2020/04/05/exploiting-python-pickle/)\n"
-              },
-              "properties": {
-                "precision": "very-high"
-              }
-            },
-            {
-              "id": "0c0a706e-8aa5-3e3d-bfbd-df57892e349f",
-              "name": "resources.rules.python.insecure-xml-use",
-              "shortDescription": {
-                "text": "Opengrep Finding: resources.rules.python.insecure-xml-use"
-              },
-              "fullDescription": {
-                "text": "Insecure XML parsing functionality, prefer 'defusedxml'"
-              },
-              "defaultConfiguration": {
-                "enabled": true,
-                "level": "warning"
-              },
-              "help": {
-                "text": "Insecure XML parsing functionality, prefer 'defusedxml'\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
-                "markdown": "Insecure XML parsing functionality, prefer 'defusedxml'\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>"
-              },
-              "properties": {
-                "precision": "very-high"
-              }
-            },
-            {
-              "id": "f8302d05-340e-300e-bea8-63719dabe88b",
-              "name": "resources.rules.python.dlint-catastrophic-redos",
-              "shortDescription": {
-                "text": "Opengrep Finding: resources.rules.python.dlint-catastrophic-redos"
-              },
-              "fullDescription": {
-                "text": "Regex `$X` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)"
-              },
-              "defaultConfiguration": {
-                "enabled": true,
-                "level": "error"
-              },
-              "help": {
-                "text": "Regex `$X` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
-                "markdown": "Regex `$X` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>\n\n<b>References:</b>\n - [https://r2c.dev/blog/2020/finding-python-redos-bugs-at-scale-using-dlint-and-r2c/](https://r2c.dev/blog/2020/finding-python-redos-bugs-at-scale-using-dlint-and-r2c/)\n - [https://r2c.dev/blog/2020/improving-redos-detection-with-dlint-and-r2c/](https://r2c.dev/blog/2020/improving-redos-detection-with-dlint-and-r2c/)\n"
+                "text": "Avoid using `pickle`, which is known to lead to code execution vulnerabilities. When unpickling, the serialized data could be manipulated to run arbitrary code. Instead, consider serializing the relevant data as JSON or a similar text-based serialization format.\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
+                "markdown": "Avoid using `pickle`, which is known to lead to code execution vulnerabilities. When unpickling, the serialized data could be manipulated to run arbitrary code. Instead, consider serializing the relevant data as JSON or a similar text-based serialization format.\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>\n\n<b>References:</b>\n - [Semgrep Rule](https://semgrep.dev/r/python.lang.security.deserialization.pickle.avoid-pickle)\n - [https://docs.python.org/3/library/pickle.html](https://docs.python.org/3/library/pickle.html)\n"
               },
               "properties": {
                 "precision": "very-high"
@@ -180,22 +160,84 @@
               }
             },
             {
-              "id": "f6afeea3-174f-325a-bb0b-16ba64b11973",
-              "name": "python.sqlalchemy.security.sqlalchemy-execute-raw-query.sqlalchemy-execute-raw-query",
+              "id": "0c0a706e-8aa5-3e3d-bfbd-df57892e349f",
+              "name": "resources.rules.python.insecure-xml-use",
               "shortDescription": {
-                "text": "Opengrep Finding: python.sqlalchemy.security.sqlalchemy-execute-raw-query.sqlalchemy-execute-raw-query"
+                "text": "Opengrep Finding: resources.rules.python.insecure-xml-use"
               },
               "fullDescription": {
-                "text": "Avoiding SQL string concatenation: untrusted input concatenated with raw SQL query can result in SQL Injection. In order to execute raw query safely, prepared statement should be used. SQLAlchemy provides TextualSQL to easily used prepared statement with named parameters. For complex SQL composition, use SQL Expression Language or Schema Definition Language. In most cases, SQLAlchemy ORM will be a better option."
+                "text": "Insecure XML parsing functionality, prefer 'defusedxml'"
+              },
+              "defaultConfiguration": {
+                "enabled": true,
+                "level": "warning"
+              },
+              "help": {
+                "text": "Insecure XML parsing functionality, prefer 'defusedxml'\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
+                "markdown": "Insecure XML parsing functionality, prefer 'defusedxml'\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>"
+              },
+              "properties": {
+                "precision": "very-high"
+              }
+            },
+            {
+              "id": "e8d14317-b205-397f-a7f1-16ff5ce82e03",
+              "name": "resources.rules.python.dlint-catastrophic-redos",
+              "shortDescription": {
+                "text": "Opengrep Finding: resources.rules.python.dlint-catastrophic-redos"
+              },
+              "fullDescription": {
+                "text": "Regex `$X` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)"
               },
               "defaultConfiguration": {
                 "enabled": true,
                 "level": "error"
               },
-              "helpUri": "https://semgrep.dev/r/python.sqlalchemy.security.sqlalchemy-execute-raw-query.sqlalchemy-execute-raw-query",
               "help": {
-                "text": "Avoiding SQL string concatenation: untrusted input concatenated with raw SQL query can result in SQL Injection. In order to execute raw query safely, prepared statement should be used. SQLAlchemy provides TextualSQL to easily used prepared statement with named parameters. For complex SQL composition, use SQL Expression Language or Schema Definition Language. In most cases, SQLAlchemy ORM will be a better option.\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
-                "markdown": "Avoiding SQL string concatenation: untrusted input concatenated with raw SQL query can result in SQL Injection. In order to execute raw query safely, prepared statement should be used. SQLAlchemy provides TextualSQL to easily used prepared statement with named parameters. For complex SQL composition, use SQL Expression Language or Schema Definition Language. In most cases, SQLAlchemy ORM will be a better option.\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>\n\n<b>References:</b>\n - [Semgrep Rule](https://semgrep.dev/r/python.sqlalchemy.security.sqlalchemy-execute-raw-query.sqlalchemy-execute-raw-query)\n - [https://docs.sqlalchemy.org/en/14/core/tutorial.html#using-textual-sql](https://docs.sqlalchemy.org/en/14/core/tutorial.html#using-textual-sql)\n - [https://www.tutorialspoint.com/sqlalchemy/sqlalchemy_quick_guide.htm](https://www.tutorialspoint.com/sqlalchemy/sqlalchemy_quick_guide.htm)\n - [https://docs.sqlalchemy.org/en/14/core/tutorial.html#using-more-specific-text-with-table-expression-literal-column-and-expression-column](https://docs.sqlalchemy.org/en/14/core/tutorial.html#using-more-specific-text-with-table-expression-literal-column-and-expression-column)\n"
+                "text": "Regex `$X` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
+                "markdown": "Regex `$X` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>\n\n<b>References:</b>\n - [https://r2c.dev/blog/2020/finding-python-redos-bugs-at-scale-using-dlint-and-r2c/](https://r2c.dev/blog/2020/finding-python-redos-bugs-at-scale-using-dlint-and-r2c/)\n - [https://r2c.dev/blog/2020/improving-redos-detection-with-dlint-and-r2c/](https://r2c.dev/blog/2020/improving-redos-detection-with-dlint-and-r2c/)\n"
+              },
+              "properties": {
+                "precision": "very-high"
+              }
+            },
+            {
+              "id": "f6afeea3-174f-325a-bb0b-16ba64b11973",
+              "name": "resources.rules.python.sqlalchemy-execute-raw-query",
+              "shortDescription": {
+                "text": "Opengrep Finding: resources.rules.python.sqlalchemy-execute-raw-query"
+              },
+              "fullDescription": {
+                "text": "Avoiding SQL string concatenation: untrusted input concatinated with raw SQL query can result in SQL Injection. In order to execute raw query safely, prepared statement should be used. SQLAlchemy provides TextualSQL to easily used prepared statement with named parameters. For complexe SQL composition, use SQL Expression Languague or Schema Definition Language. In most cases, SQLAlchemy ORM will be a better option.\n"
+              },
+              "defaultConfiguration": {
+                "enabled": true,
+                "level": "error"
+              },
+              "help": {
+                "text": "Avoiding SQL string concatenation: untrusted input concatinated with raw SQL query can result in SQL Injection. In order to execute raw query safely, prepared statement should be used. SQLAlchemy provides TextualSQL to easily used prepared statement with named parameters. For complexe SQL composition, use SQL Expression Languague or Schema Definition Language. In most cases, SQLAlchemy ORM will be a better option.\n\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
+                "markdown": "Avoiding SQL string concatenation: untrusted input concatinated with raw SQL query can result in SQL Injection. In order to execute raw query safely, prepared statement should be used. SQLAlchemy provides TextualSQL to easily used prepared statement with named parameters. For complexe SQL composition, use SQL Expression Languague or Schema Definition Language. In most cases, SQLAlchemy ORM will be a better option.\n\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>\n\n<b>References:</b>\n - [https://docs.sqlalchemy.org/en/14/core/tutorial.html#using-textual-sql](https://docs.sqlalchemy.org/en/14/core/tutorial.html#using-textual-sql)\n - [https://www.tutorialspoint.com/sqlalchemy/sqlalchemy_quick_guide.htm](https://www.tutorialspoint.com/sqlalchemy/sqlalchemy_quick_guide.htm)\n - [https://docs.sqlalchemy.org/en/14/core/tutorial.html#using-more-specific-text-with-table-expression-literal-column-and-expression-column](https://docs.sqlalchemy.org/en/14/core/tutorial.html#using-more-specific-text-with-table-expression-literal-column-and-expression-column)\n"
+              },
+              "properties": {
+                "precision": "very-high"
+              }
+            },
+            {
+              "id": "5712df5b-8d86-3a3a-8530-50dca0cb6f8b",
+              "name": "resources.rules.python.dlint-catastrophic-redos",
+              "shortDescription": {
+                "text": "Opengrep Finding: resources.rules.python.dlint-catastrophic-redos"
+              },
+              "fullDescription": {
+                "text": "Regex `$X` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)"
+              },
+              "defaultConfiguration": {
+                "enabled": true,
+                "level": "error"
+              },
+              "help": {
+                "text": "Regex `$X` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
+                "markdown": "Regex `$X` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>\n\n<b>References:</b>\n - [https://r2c.dev/blog/2020/finding-python-redos-bugs-at-scale-using-dlint-and-r2c/](https://r2c.dev/blog/2020/finding-python-redos-bugs-at-scale-using-dlint-and-r2c/)\n - [https://r2c.dev/blog/2020/improving-redos-detection-with-dlint-and-r2c/](https://r2c.dev/blog/2020/improving-redos-detection-with-dlint-and-r2c/)\n"
               },
               "properties": {
                 "precision": "very-high"
@@ -244,48 +286,6 @@
               }
             },
             {
-              "id": "5712df5b-8d86-3a3a-8530-50dca0cb6f8b",
-              "name": "resources.rules.python.dlint-catastrophic-redos",
-              "shortDescription": {
-                "text": "Opengrep Finding: resources.rules.python.dlint-catastrophic-redos"
-              },
-              "fullDescription": {
-                "text": "Regex `$X` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)"
-              },
-              "defaultConfiguration": {
-                "enabled": true,
-                "level": "error"
-              },
-              "help": {
-                "text": "Regex `$X` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
-                "markdown": "Regex `$X` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>\n\n<b>References:</b>\n - [https://r2c.dev/blog/2020/finding-python-redos-bugs-at-scale-using-dlint-and-r2c/](https://r2c.dev/blog/2020/finding-python-redos-bugs-at-scale-using-dlint-and-r2c/)\n - [https://r2c.dev/blog/2020/improving-redos-detection-with-dlint-and-r2c/](https://r2c.dev/blog/2020/improving-redos-detection-with-dlint-and-r2c/)\n"
-              },
-              "properties": {
-                "precision": "very-high"
-              }
-            },
-            {
-              "id": "8172b7eb-bdc6-33a8-86ac-12addbb9d54b",
-              "name": "resources.rules.python.insecure-xml-use",
-              "shortDescription": {
-                "text": "Opengrep Finding: resources.rules.python.insecure-xml-use"
-              },
-              "fullDescription": {
-                "text": "Insecure XML parsing functionality, prefer 'defusedxml'"
-              },
-              "defaultConfiguration": {
-                "enabled": true,
-                "level": "warning"
-              },
-              "help": {
-                "text": "Insecure XML parsing functionality, prefer 'defusedxml'\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
-                "markdown": "Insecure XML parsing functionality, prefer 'defusedxml'\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>"
-              },
-              "properties": {
-                "precision": "very-high"
-              }
-            },
-            {
               "id": "94fd16b6-dcba-3658-ad4b-83e46673ac6a",
               "name": "resources.rules.python.subprocess-shell-true",
               "shortDescription": {
@@ -301,6 +301,27 @@
               "help": {
                 "text": "Found 'subprocess' function '$FUNC' with 'shell=True'. This is dangerous because this call will spawn\nthe command using a shell process. Doing so propagates current shell settings and variables, which\nmakes it much easier for a malicious actor to execute commands. Use 'shell=False' instead.\n\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
                 "markdown": "Found 'subprocess' function '$FUNC' with 'shell=True'. This is dangerous because this call will spawn\nthe command using a shell process. Doing so propagates current shell settings and variables, which\nmakes it much easier for a malicious actor to execute commands. Use 'shell=False' instead.\n\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>\n\n<b>References:</b>\n - [https://stackoverflow.com/questions/3172470/actual-meaning-of-shell-true-in-subprocess](https://stackoverflow.com/questions/3172470/actual-meaning-of-shell-true-in-subprocess)\n - [https://docs.python.org/3/library/subprocess.html](https://docs.python.org/3/library/subprocess.html)\n"
+              },
+              "properties": {
+                "precision": "very-high"
+              }
+            },
+            {
+              "id": "6d9c97b1-0ed8-3c78-8d4f-10f80030ce38",
+              "name": "resources.rules.python.insecure-xml-use",
+              "shortDescription": {
+                "text": "Opengrep Finding: resources.rules.python.insecure-xml-use"
+              },
+              "fullDescription": {
+                "text": "Insecure XML parsing functionality, prefer 'defusedxml'"
+              },
+              "defaultConfiguration": {
+                "enabled": true,
+                "level": "warning"
+              },
+              "help": {
+                "text": "Insecure XML parsing functionality, prefer 'defusedxml'\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
+                "markdown": "Insecure XML parsing functionality, prefer 'defusedxml'\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>"
               },
               "properties": {
                 "precision": "very-high"
@@ -328,27 +349,6 @@
               }
             },
             {
-              "id": "6df1271b-061a-3246-9172-27c2bf05d7a9",
-              "name": "resources.rules.python.sqlalchemy-execute-raw-query",
-              "shortDescription": {
-                "text": "Opengrep Finding: resources.rules.python.sqlalchemy-execute-raw-query"
-              },
-              "fullDescription": {
-                "text": "Avoiding SQL string concatenation: untrusted input concatinated with raw SQL query can result in SQL Injection. In order to execute raw query safely, prepared statement should be used. SQLAlchemy provides TextualSQL to easily used prepared statement with named parameters. For complexe SQL composition, use SQL Expression Languague or Schema Definition Language. In most cases, SQLAlchemy ORM will be a better option.\n"
-              },
-              "defaultConfiguration": {
-                "enabled": true,
-                "level": "error"
-              },
-              "help": {
-                "text": "Avoiding SQL string concatenation: untrusted input concatinated with raw SQL query can result in SQL Injection. In order to execute raw query safely, prepared statement should be used. SQLAlchemy provides TextualSQL to easily used prepared statement with named parameters. For complexe SQL composition, use SQL Expression Languague or Schema Definition Language. In most cases, SQLAlchemy ORM will be a better option.\n\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
-                "markdown": "Avoiding SQL string concatenation: untrusted input concatinated with raw SQL query can result in SQL Injection. In order to execute raw query safely, prepared statement should be used. SQLAlchemy provides TextualSQL to easily used prepared statement with named parameters. For complexe SQL composition, use SQL Expression Languague or Schema Definition Language. In most cases, SQLAlchemy ORM will be a better option.\n\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>\n\n<b>References:</b>\n - [https://docs.sqlalchemy.org/en/14/core/tutorial.html#using-textual-sql](https://docs.sqlalchemy.org/en/14/core/tutorial.html#using-textual-sql)\n - [https://www.tutorialspoint.com/sqlalchemy/sqlalchemy_quick_guide.htm](https://www.tutorialspoint.com/sqlalchemy/sqlalchemy_quick_guide.htm)\n - [https://docs.sqlalchemy.org/en/14/core/tutorial.html#using-more-specific-text-with-table-expression-literal-column-and-expression-column](https://docs.sqlalchemy.org/en/14/core/tutorial.html#using-more-specific-text-with-table-expression-literal-column-and-expression-column)\n"
-              },
-              "properties": {
-                "precision": "very-high"
-              }
-            },
-            {
               "id": "082e610a-0d18-3d29-88b3-a43458ace8b0",
               "name": "resources.rules.python.generic-one-liners",
               "shortDescription": {
@@ -370,6 +370,48 @@
               }
             },
             {
+              "id": "6df1271b-061a-3246-9172-27c2bf05d7a9",
+              "name": "resources.rules.python.sqlalchemy-execute-raw-query",
+              "shortDescription": {
+                "text": "Opengrep Finding: resources.rules.python.sqlalchemy-execute-raw-query"
+              },
+              "fullDescription": {
+                "text": "Avoiding SQL string concatenation: untrusted input concatinated with raw SQL query can result in SQL Injection. In order to execute raw query safely, prepared statement should be used. SQLAlchemy provides TextualSQL to easily used prepared statement with named parameters. For complexe SQL composition, use SQL Expression Languague or Schema Definition Language. In most cases, SQLAlchemy ORM will be a better option.\n"
+              },
+              "defaultConfiguration": {
+                "enabled": true,
+                "level": "error"
+              },
+              "help": {
+                "text": "Avoiding SQL string concatenation: untrusted input concatinated with raw SQL query can result in SQL Injection. In order to execute raw query safely, prepared statement should be used. SQLAlchemy provides TextualSQL to easily used prepared statement with named parameters. For complexe SQL composition, use SQL Expression Languague or Schema Definition Language. In most cases, SQLAlchemy ORM will be a better option.\n\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
+                "markdown": "Avoiding SQL string concatenation: untrusted input concatinated with raw SQL query can result in SQL Injection. In order to execute raw query safely, prepared statement should be used. SQLAlchemy provides TextualSQL to easily used prepared statement with named parameters. For complexe SQL composition, use SQL Expression Languague or Schema Definition Language. In most cases, SQLAlchemy ORM will be a better option.\n\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>\n\n<b>References:</b>\n - [https://docs.sqlalchemy.org/en/14/core/tutorial.html#using-textual-sql](https://docs.sqlalchemy.org/en/14/core/tutorial.html#using-textual-sql)\n - [https://www.tutorialspoint.com/sqlalchemy/sqlalchemy_quick_guide.htm](https://www.tutorialspoint.com/sqlalchemy/sqlalchemy_quick_guide.htm)\n - [https://docs.sqlalchemy.org/en/14/core/tutorial.html#using-more-specific-text-with-table-expression-literal-column-and-expression-column](https://docs.sqlalchemy.org/en/14/core/tutorial.html#using-more-specific-text-with-table-expression-literal-column-and-expression-column)\n"
+              },
+              "properties": {
+                "precision": "very-high"
+              }
+            },
+            {
+              "id": "173990b5-d5a1-3852-98e8-85397bab8557",
+              "name": "resources.rules.python.python-dynamic-execution-eval",
+              "shortDescription": {
+                "text": "Opengrep Finding: resources.rules.python.python-dynamic-execution-eval"
+              },
+              "fullDescription": {
+                "text": "Dynamic execution using exec or eval."
+              },
+              "defaultConfiguration": {
+                "enabled": true,
+                "level": "error"
+              },
+              "help": {
+                "text": "Dynamic execution using exec or eval.\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
+                "markdown": "Dynamic execution using exec or eval.\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>"
+              },
+              "properties": {
+                "precision": "very-high"
+              }
+            },
+            {
               "id": "e6a4e9ae-e0e4-30f3-abb4-f6de8983c783",
               "name": "resources.rules.python.dynamic-urllib-use-detected",
               "shortDescription": {
@@ -385,27 +427,6 @@
               "help": {
                 "text": "Detected a dynamic value being used with urllib. urllib supports 'file://' schemes, so a dynamic value controlled by a malicious actor may allow them to read arbitrary files. Audit uses of urllib calls to ensure user data cannot control the URLs, or consider using the 'requests' library instead.\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
                 "markdown": "Detected a dynamic value being used with urllib. urllib supports 'file://' schemes, so a dynamic value controlled by a malicious actor may allow them to read arbitrary files. Audit uses of urllib calls to ensure user data cannot control the URLs, or consider using the 'requests' library instead.\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>"
-              },
-              "properties": {
-                "precision": "very-high"
-              }
-            },
-            {
-              "id": "b1988e74-6154-3dac-a2a7-9575f2e23ad1",
-              "name": "resources.rules.python.insecure-exec-use",
-              "shortDescription": {
-                "text": "Opengrep Finding: resources.rules.python.insecure-exec-use"
-              },
-              "fullDescription": {
-                "text": "The Python 'exec' function is not secure against maliciously constructed input"
-              },
-              "defaultConfiguration": {
-                "enabled": true,
-                "level": "warning"
-              },
-              "help": {
-                "text": "The Python 'exec' function is not secure against maliciously constructed input\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
-                "markdown": "The Python 'exec' function is not secure against maliciously constructed input\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>"
               },
               "properties": {
                 "precision": "very-high"
@@ -454,27 +475,6 @@
               }
             },
             {
-              "id": "a856baaa-4e9a-35b0-93c5-e8cb2b6837f2",
-              "name": "resources.rules.python.sqlalchemy-execute-raw-query",
-              "shortDescription": {
-                "text": "Opengrep Finding: resources.rules.python.sqlalchemy-execute-raw-query"
-              },
-              "fullDescription": {
-                "text": "Avoiding SQL string concatenation: untrusted input concatinated with raw SQL query can result in SQL Injection. In order to execute raw query safely, prepared statement should be used. SQLAlchemy provides TextualSQL to easily used prepared statement with named parameters. For complexe SQL composition, use SQL Expression Languague or Schema Definition Language. In most cases, SQLAlchemy ORM will be a better option.\n"
-              },
-              "defaultConfiguration": {
-                "enabled": true,
-                "level": "error"
-              },
-              "help": {
-                "text": "Avoiding SQL string concatenation: untrusted input concatinated with raw SQL query can result in SQL Injection. In order to execute raw query safely, prepared statement should be used. SQLAlchemy provides TextualSQL to easily used prepared statement with named parameters. For complexe SQL composition, use SQL Expression Languague or Schema Definition Language. In most cases, SQLAlchemy ORM will be a better option.\n\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
-                "markdown": "Avoiding SQL string concatenation: untrusted input concatinated with raw SQL query can result in SQL Injection. In order to execute raw query safely, prepared statement should be used. SQLAlchemy provides TextualSQL to easily used prepared statement with named parameters. For complexe SQL composition, use SQL Expression Languague or Schema Definition Language. In most cases, SQLAlchemy ORM will be a better option.\n\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>\n\n<b>References:</b>\n - [https://docs.sqlalchemy.org/en/14/core/tutorial.html#using-textual-sql](https://docs.sqlalchemy.org/en/14/core/tutorial.html#using-textual-sql)\n - [https://www.tutorialspoint.com/sqlalchemy/sqlalchemy_quick_guide.htm](https://www.tutorialspoint.com/sqlalchemy/sqlalchemy_quick_guide.htm)\n - [https://docs.sqlalchemy.org/en/14/core/tutorial.html#using-more-specific-text-with-table-expression-literal-column-and-expression-column](https://docs.sqlalchemy.org/en/14/core/tutorial.html#using-more-specific-text-with-table-expression-literal-column-and-expression-column)\n"
-              },
-              "properties": {
-                "precision": "very-high"
-              }
-            },
-            {
               "id": "e64dd979-f00b-3d17-8614-b26acdfe84d5",
               "name": "resources.rules.python.dlint-catastrophic-redos",
               "shortDescription": {
@@ -517,6 +517,27 @@
               }
             },
             {
+              "id": "a856baaa-4e9a-35b0-93c5-e8cb2b6837f2",
+              "name": "resources.rules.python.sqlalchemy-execute-raw-query",
+              "shortDescription": {
+                "text": "Opengrep Finding: resources.rules.python.sqlalchemy-execute-raw-query"
+              },
+              "fullDescription": {
+                "text": "Avoiding SQL string concatenation: untrusted input concatinated with raw SQL query can result in SQL Injection. In order to execute raw query safely, prepared statement should be used. SQLAlchemy provides TextualSQL to easily used prepared statement with named parameters. For complexe SQL composition, use SQL Expression Languague or Schema Definition Language. In most cases, SQLAlchemy ORM will be a better option.\n"
+              },
+              "defaultConfiguration": {
+                "enabled": true,
+                "level": "error"
+              },
+              "help": {
+                "text": "Avoiding SQL string concatenation: untrusted input concatinated with raw SQL query can result in SQL Injection. In order to execute raw query safely, prepared statement should be used. SQLAlchemy provides TextualSQL to easily used prepared statement with named parameters. For complexe SQL composition, use SQL Expression Languague or Schema Definition Language. In most cases, SQLAlchemy ORM will be a better option.\n\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
+                "markdown": "Avoiding SQL string concatenation: untrusted input concatinated with raw SQL query can result in SQL Injection. In order to execute raw query safely, prepared statement should be used. SQLAlchemy provides TextualSQL to easily used prepared statement with named parameters. For complexe SQL composition, use SQL Expression Languague or Schema Definition Language. In most cases, SQLAlchemy ORM will be a better option.\n\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>\n\n<b>References:</b>\n - [https://docs.sqlalchemy.org/en/14/core/tutorial.html#using-textual-sql](https://docs.sqlalchemy.org/en/14/core/tutorial.html#using-textual-sql)\n - [https://www.tutorialspoint.com/sqlalchemy/sqlalchemy_quick_guide.htm](https://www.tutorialspoint.com/sqlalchemy/sqlalchemy_quick_guide.htm)\n - [https://docs.sqlalchemy.org/en/14/core/tutorial.html#using-more-specific-text-with-table-expression-literal-column-and-expression-column](https://docs.sqlalchemy.org/en/14/core/tutorial.html#using-more-specific-text-with-table-expression-literal-column-and-expression-column)\n"
+              },
+              "properties": {
+                "precision": "very-high"
+              }
+            },
+            {
               "id": "e04430a1-4843-3816-9c34-7a94eb2b9d14",
               "name": "resources.rules.python.dlint-catastrophic-redos",
               "shortDescription": {
@@ -535,6 +556,126 @@
               },
               "properties": {
                 "precision": "very-high"
+              }
+            },
+            {
+              "id": "e3470143-4055-3dda-a8d7-674c563a1b5f",
+              "name": "SQL Injection Vulnerability via String-Based Query Construction",
+              "helpUri": "https://www.glog.ai/",
+              "help": {
+                "text": "",
+                "markdown": "## Description\n\nSQL Injection Vulnerability via String-Based Query Construction is a common security vulnerability in applications that use an SQL database. It occurs when an application uses user input to construct an SQL query without properly sanitizing the input. This allows an attacker to manipulate the query, potentially gaining unauthorized access to data, modifying data, or executing commands on the database server.\n\nIn Python, this vulnerability can occur when using the `params[\"id\"]` in a string format to construct an SQL query. If the `params[\"id\"]` is directly included in the query string, an attacker could provide a malicious value that alters the query.\n\n## Mitigation Advice\n\nTo mitigate this vulnerability, never construct SQL queries using string formatting with unsanitized user input. Instead, use parameterized queries or prepared statements, which can ensure that user input is properly escaped and cannot alter the structure of the query.\n\n## Source Code Fix Recommendation\n\nInstead of constructing the query as a string, use a parameterized query. Here's an example using the `sqlite3` library:\n\n```python\nimport sqlite3\n\ndef get_user(params):\n    conn = sqlite3.connect('my_database.db')\n    c = conn.cursor()\n\n    # BAD: String-based query construction\n    # c.execute(f\"SELECT * FROM users WHERE id = {params['id']}\")\n\n    # GOOD: Parameterized query\n    c.execute(\"SELECT * FROM users WHERE id = ?\", (params['id'],))\n\n    return c.fetchone()\n```\n\nIn this example, the `?` in the query is a placeholder that `sqlite3` will replace with the value of `params['id']`, properly escaping it to prevent SQL injection.\n\n## Library Dependencies\n\n- sqlite3 (built-in with Python)\n\n## References\n\n- [OWASP SQL Injection Prevention Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/SQL_Injection_Prevention_Cheat_Sheet.html)\n- [CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')](https://cwe.mitre.org/data/definitions/89.html)"
+              },
+              "properties": {
+                "cwe": [
+                  {
+                    "id": "CWE-89",
+                    "url": "https://cwe.mitre.org/data/definitions/89.html"
+                  }
+                ],
+                "severity": "MEDIUM",
+                "kind": "FAIL",
+                "tags": [
+                  "CWE-89"
+                ]
+              }
+            },
+            {
+              "id": "9f556f54-6c75-39b8-9afa-2b34c9d259d6",
+              "name": "\"Vulnerability in Audit URL Open for Permitted Schemes\"",
+              "helpUri": "https://www.glog.ai/",
+              "help": {
+                "text": "",
+                "markdown": "## Description\n\n\"Vulnerability in Audit URL Open for Permitted Schemes\" is a security vulnerability in Python programming language that can occur when an application does not properly validate the scheme of a URL before opening it. This can allow an attacker to open a URL with a scheme that is not intended to be permitted, potentially leading to various attacks such as remote file inclusion (RFI), local file inclusion (LFI), or even command execution.\n\n## Mitigation Advice\n\nTo mitigate this vulnerability, it is recommended to always validate the scheme of a URL before opening it. This can be done by using a whitelist of permitted schemes and checking that the scheme of the URL is in this list before opening it. Additionally, it is also recommended to use secure coding practices and to keep your Python environment and libraries up to date.\n\n## Source Code Fix Recommendation\n\nHere is a simple example of how you can validate the scheme of a URL before opening it in Python:\n\n```python\nimport urllib.parse\n\ndef open_url(url):\n    parsed_url = urllib.parse.urlparse(url)\n    if parsed_url.scheme not in ['http', 'https']:\n        raise ValueError(f'Invalid scheme: {parsed_url.scheme}')\n    # open the URL here\n```\n\nIn this example, the `urlparse` function from the `urllib.parse` module is used to parse the URL and extract its scheme. Then, it checks if the scheme is in the list of permitted schemes (`http` and `https`), and if not, it raises a `ValueError`.\n\n## Library Dependencies\n\nThe code example does not require any additional library dependencies beyond the Python standard library.\n\n## OWASP and CWE Resources\n\n- [CWE-918: Server-Side Request Forgery (SSRF)](https://cwe.mitre.org/data/definitions/918.html)\n\nPlease note that the links provided are valid and active at the time of writing this report."
+              },
+              "properties": {
+                "cwe": [
+                  {
+                    "id": "CWE-918",
+                    "url": "https://cwe.mitre.org/data/definitions/918.html"
+                  }
+                ],
+                "severity": "MEDIUM",
+                "kind": "FAIL",
+                "tags": [
+                  "CWE-918"
+                ]
+              }
+            },
+            {
+              "id": "ac9acc4a-ed2c-3c9a-924f-ff68f1aca537",
+              "name": "Exec Usage Detected",
+              "helpUri": "https://www.glog.ai/",
+              "help": {
+                "text": "",
+                "markdown": "## Description\n\n\"Exec Usage Detected\" is a vulnerability in Python programming language that arises when the `exec()` function is used. The `exec()` function is a built-in Python function that executes the Python program, which is either a string or object code. If it is a string, the string is parsed as a suite of Python statements which is then executed unless a syntax error occurs and if it is an object code, it is simply executed. \n\nThe vulnerability arises when an attacker can control the input to the `exec()` function. This can lead to arbitrary code execution, which is a serious security risk. \n\n## Mitigation Advice\n\nAvoid using `exec()` function whenever possible. If it is necessary to use it, make sure that the input to the function is not controlled by the user or sanitized properly before use. \n\n## Source Code Fix Recommendation\n\nInstead of using `exec()`, consider using safer alternatives like `ast.literal_eval()`. Here is an example:\n\n```python\nimport ast\n\n# Instead of this:\n# exec(program, envs)\n\n# Do this:\nast.literal_eval(program)\n```\n\nIn this example, `ast.literal_eval()` safely parses and evaluates an expression node or a string containing a Python literal or container display. It raises an exception if the input isn't a valid Python datatype, so the code won't be executed if it's unsafe.\n\n## Library Dependencies\n\nThe code example requires the `ast` library, which is a built-in Python library and doesn't need to be installed separately.\n\n## OWASP and CWE Resources\n\n- [OWASP Python Security - Dangerous Functions](https://python-security.readthedocs.io/security.html#dangerous-functions)\n- [CWE-94: Improper Control of Generation of Code ('Code Injection')](https://cwe.mitre.org/data/definitions/94.html)\n\nPlease note that these links are valid and active at the time of writing this report."
+              },
+              "properties": {
+                "cwe": [
+                  {
+                    "id": "CWE-94",
+                    "url": "https://cwe.mitre.org/data/definitions/94.html"
+                  }
+                ],
+                "severity": "MEDIUM",
+                "kind": "FAIL",
+                "tags": [
+                  "CWE-94"
+                ]
+              }
+            },
+            {
+              "id": "2ece73d0-2478-3100-8f03-a9dd4d03eae7",
+              "name": "\"Vulnerability in URL Audit for Permitted Schemes\"",
+              "helpUri": "https://www.glog.ai/",
+              "help": {
+                "text": "",
+                "markdown": "## Description\n\n\"Vulnerability in URL Audit for Permitted Schemes\" is a security vulnerability that can occur in Python applications when the application does not properly validate or restrict the schemes allowed in URLs. This can lead to various attacks such as SSRF (Server Side Request Forgery), open redirect, or even remote code execution in some cases.\n\nThe `sys.stdout` sink in Python is a standard output stream which is used to output data. If an attacker can control the data being written to `sys.stdout`, it can lead to information disclosure or other potential security issues.\n\n## Mitigation Advice\n\nTo mitigate this vulnerability, it is recommended to always validate and sanitize user inputs. Never trust user inputs blindly. Specifically for URLs, always validate the scheme and ensure it is in the list of permitted schemes. Avoid using `sys.stdout` to output sensitive information.\n\n## Source Code Fix Recommendation\n\nHere is a simple example of how to validate URL scheme in Python:\n\n```python\nfrom urllib.parse import urlparse\n\ndef validate_url(url):\n    scheme = urlparse(url).scheme\n    if scheme not in ['http', 'https']:\n        raise ValueError('Invalid URL scheme')\n    return url\n```\n\nIn this example, only 'http' and 'https' schemes are allowed. If a URL with a different scheme is provided, a `ValueError` is raised.\n\n## Library Dependencies\n\nThe code example does not require any additional library dependencies. The `urllib.parse` module is part of the Python Standard Library.\n\n## References\n\n- [CWE-918: Server-Side Request Forgery (SSRF)](https://cwe.mitre.org/data/definitions/918.html)\n- [CWE-601: URL Redirection to Untrusted Site ('Open Redirect')](https://cwe.mitre.org/data/definitions/601.html)\n- [CWE-77: Improper Neutralization of Special Elements used in a Command ('Command Injection')](https://cwe.mitre.org/data/definitions/77.html)"
+              },
+              "properties": {
+                "cwe": [
+                  {
+                    "id": "CWE-918",
+                    "url": "https://cwe.mitre.org/data/definitions/918.html"
+                  },
+                  {
+                    "id": "CWE-601",
+                    "url": "https://cwe.mitre.org/data/definitions/601.html"
+                  },
+                  {
+                    "id": "CWE-77",
+                    "url": "https://cwe.mitre.org/data/definitions/77.html"
+                  }
+                ],
+                "severity": "MEDIUM",
+                "kind": "FAIL",
+                "tags": [
+                  "CWE-918",
+                  "CWE-601",
+                  "CWE-77"
+                ]
+              }
+            },
+            {
+              "id": "05f9c51c-145b-3241-ae7d-1f1334829e02",
+              "name": "SQL Injection Vulnerability via String-Based Query Construction",
+              "helpUri": "https://www.glog.ai/",
+              "help": {
+                "text": "",
+                "markdown": "## Description\n\nSQL Injection Vulnerability via String-Based Query Construction is a common security vulnerability in applications that use an SQL database. It occurs when an application uses user input to construct SQL queries without properly sanitizing the input. This allows an attacker to manipulate the SQL query to perform unauthorized actions, such as viewing, modifying, or deleting data.\n\nIn Python, this vulnerability can occur when using the `params.get` method to retrieve user input and then using this input to construct an SQL query. If the input is not properly sanitized, an attacker could provide SQL code as input, which would then be executed by the database.\n\n## Mitigation Advice\n\nTo mitigate this vulnerability, never use string concatenation or formatting to construct SQL queries. Instead, use parameterized queries or prepared statements, which can ensure that user input is properly sanitized and cannot be used to manipulate the SQL query.\n\n## Source Code Fix Recommendation\n\nHere is an example of vulnerable code:\n\n```python\n# Vulnerable code\nuser_id = params.get('id')\nquery = \"SELECT * FROM users WHERE id = '%s'\" % user_id\ncursor.execute(query)\n```\n\nAnd here is how it can be fixed:\n\n```python\n# Fixed code\nuser_id = params.get('id')\nquery = \"SELECT * FROM users WHERE id = %s\"\ncursor.execute(query, (user_id,))\n```\n\nIn the fixed code, the `execute` method is used to perform the query. The query string contains a placeholder `%s` where the user input should be inserted. The user input is then provided as a second argument to the `execute` method, which ensures that it is properly sanitized.\n\n## Library Dependencies\n\nThe code example requires the following library dependencies:\n\n- A Python SQL library, such as `psycopg2` for PostgreSQL or `mysql-connector-python` for MySQL.\n\n## OWASP Resources\n\n- [OWASP Python Security - SQL Injection](https://cheatsheetseries.owasp.org/cheatsheets/SQL_Injection_Prevention_Cheat_Sheet.html)\n- [OWASP Top 10 2017 - Injection](https://owasp.org/www-project-top-ten/2017/A1_2017-Injection)\n\n## Common Weakness Enumeration (CWE)\n\n- [CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')](https://cwe.mitre.org/data/definitions/89.html)"
+              },
+              "properties": {
+                "cwe": [
+                  {
+                    "id": "CWE-89",
+                    "url": "https://cwe.mitre.org/data/definitions/89.html"
+                  }
+                ],
+                "severity": "MEDIUM",
+                "kind": "FAIL",
+                "tags": [
+                  "CWE-89"
+                ]
               }
             }
           ],
@@ -677,7 +818,7 @@
           "kind": "fail",
           "level": "warning",
           "message": {
-            "text": "Avoid using `pickle`, which is known to lead to code execution vulnerabilities. When unpickling, the serialized data could be manipulated to run arbitrary code. Instead, consider serializing the relevant data as JSON or a similar text-based serialization format."
+            "text": "Avoid using `pickle`, which is known to lead to code execution vulnerabilities.\nWhen unpickling, the serialized data could be manipulated to run arbitrary code.\nInstead, consider serializing the relevant data as JSON or a similar text-based\nserialization format.\n"
           },
           "locations": [
             {
@@ -699,69 +840,7 @@
             }
           ],
           "fingerprints": {
-            "matchBasedId/v1": "4339311549e81d5079cfb2fb4032a38b592c75d8b1df19c3557d5f8f01952f6c5bf01fa3f03287555dd852a61b84b547e9f7aa3ba76ec93cb1ac9446006b581f_0"
-          },
-          "properties": {}
-        },
-        {
-          "ruleId": "0c0a706e-8aa5-3e3d-bfbd-df57892e349f",
-          "kind": "fail",
-          "level": "warning",
-          "message": {
-            "text": "Insecure XML parsing functionality, prefer 'defusedxml'"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "dsvw.py",
-                  "uriBaseId": "%SRCROOT%"
-                },
-                "region": {
-                  "startLine": 20,
-                  "startColumn": 211,
-                  "endLine": 20,
-                  "endColumn": 220,
-                  "snippet": {
-                    "text": "    cursor.executemany(\"INSERT INTO users(id, username, name, surname, password) VALUES(NULL, ?, ?, ?, ?)\", ((_.findtext(\"username\"), _.findtext(\"name\"), _.findtext(\"surname\"), _.findtext(\"password\")) for _ in xml.etree.ElementTree.fromstring(USERS_XML).findall(\"user\")))"
-                  }
-                }
-              }
-            }
-          ],
-          "fingerprints": {
-            "matchBasedId/v1": "56a3d1743f5b96a16147c608c467ae2ea2741410df8f3a936e6f33fa357c2c37b7906769a3c183b485fd1be666a89090ff29c38b7900f0f35ffb95af73d23872_1"
-          },
-          "properties": {}
-        },
-        {
-          "ruleId": "f8302d05-340e-300e-bea8-63719dabe88b",
-          "kind": "fail",
-          "level": "warning",
-          "message": {
-            "text": "Regex `r\"(?:\\A|[?&])%s=([^&]+)\" % match.group(\"parameter\")` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "dsvw.py",
-                  "uriBaseId": "%SRCROOT%"
-                },
-                "region": {
-                  "startLine": 26,
-                  "startColumn": 132,
-                  "endLine": 26,
-                  "endColumn": 202,
-                  "snippet": {
-                    "text": "        code, content, params, cursor = http.client.OK, HTML_PREFIX, dict((match.group(\"parameter\"), urllib.parse.unquote(','.join(re.findall(r\"(?:\\A|[?&])%s=([^&]+)\" % match.group(\"parameter\"), query)))) for match in re.finditer(r\"((\\A|[?&])(?P<parameter>[\\w\\[\\]]+)=)([^&]+)\", query)), connection.cursor()"
-                  }
-                }
-              }
-            }
-          ],
-          "fingerprints": {
-            "matchBasedId/v1": "83f6e93a6b46a72b86c2106f2457e2920a3ba1b8516b5503915afab9b340a17ffe8659ec97d3ff39bce61c07c2654fd0135653a55dbc0ba0001eae0368c83651_0"
+            "matchBasedId/v1": "a90a87404a2d3acef37956b98a8be23689752c6d517bb98e52c01b65505e6b7ca69015e8d4a7efdf1e1d716725171fefa1ad2772ca4b09ea162f816a9ac6bf12_0"
           },
           "properties": {}
         },
@@ -828,11 +907,73 @@
           "properties": {}
         },
         {
+          "ruleId": "0c0a706e-8aa5-3e3d-bfbd-df57892e349f",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "Insecure XML parsing functionality, prefer 'defusedxml'"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "dsvw.py",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 20,
+                  "startColumn": 211,
+                  "endLine": 20,
+                  "endColumn": 220,
+                  "snippet": {
+                    "text": "    cursor.executemany(\"INSERT INTO users(id, username, name, surname, password) VALUES(NULL, ?, ?, ?, ?)\", ((_.findtext(\"username\"), _.findtext(\"name\"), _.findtext(\"surname\"), _.findtext(\"password\")) for _ in xml.etree.ElementTree.fromstring(USERS_XML).findall(\"user\")))"
+                  }
+                }
+              }
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "56a3d1743f5b96a16147c608c467ae2ea2741410df8f3a936e6f33fa357c2c37b7906769a3c183b485fd1be666a89090ff29c38b7900f0f35ffb95af73d23872_1"
+          },
+          "properties": {}
+        },
+        {
+          "ruleId": "e8d14317-b205-397f-a7f1-16ff5ce82e03",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "Regex `r\"((\\A|[?&])(?P<parameter>[\\w\\[\\]]+)=)([^&]+)\"` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "dsvw.py",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 26,
+                  "startColumn": 219,
+                  "endLine": 26,
+                  "endColumn": 285,
+                  "snippet": {
+                    "text": "        code, content, params, cursor = http.client.OK, HTML_PREFIX, dict((match.group(\"parameter\"), urllib.parse.unquote(','.join(re.findall(r\"(?:\\A|[?&])%s=([^&]+)\" % match.group(\"parameter\"), query)))) for match in re.finditer(r\"((\\A|[?&])(?P<parameter>[\\w\\[\\]]+)=)([^&]+)\", query)), connection.cursor()"
+                  }
+                }
+              }
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "5673f41c24dd547358857cfd62a8faeff8492ea697df2d9bdcf5e96b634624d9faff95c37c296b8c04f40a093c2eb645165f54fcb8344834e6ef197a67d6461a_0"
+          },
+          "properties": {}
+        },
+        {
           "ruleId": "f6afeea3-174f-325a-bb0b-16ba64b11973",
           "kind": "fail",
           "level": "warning",
           "message": {
-            "text": "Avoiding SQL string concatenation: untrusted input concatinated with raw SQL query can result in SQL Injection. In order to execute raw query safely, prepared statement should be used. SQLAlchemy provides TextualSQL to easily used prepared statement with named parameters. For complexe SQL composition, use SQL Expression Languague or Schema Definition Language. In most cases, SQLAlchemy ORM will be a better option.\n"
+            "text": "Avoiding SQL string concatenation: untrusted input concatenated with raw SQL query can result in SQL Injection. In order to execute raw query safely, prepared statement should be used. SQLAlchemy provides TextualSQL to easily used prepared statement with named parameters. For complex SQL composition, use SQL Expression Language or Schema Definition Language. In most cases, SQLAlchemy ORM will be a better option."
           },
           "locations": [
             {
@@ -854,69 +995,7 @@
             }
           ],
           "fingerprints": {
-            "matchBasedId/v1": "8467a3d9a75b87f37434b6ebc5fd517b9161c4f782725ee3e4637382843e08ac770ee308d970e19bfc86ce7e119c4bc2267c20c951de8db7e64eb4d35b260ede_0"
-          },
-          "properties": {}
-        },
-        {
-          "ruleId": "37491dc5-25cc-3c02-8fd9-42ebb7971b86",
-          "kind": "fail",
-          "level": "warning",
-          "message": {
-            "text": "Avoid using `pickle`, which is known to lead to code execution vulnerabilities.\nWhen unpickling, the serialized data could be manipulated to run arbitrary code.\nInstead, consider serializing the relevant data as JSON or a similar text-based\nserialization format.\n"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "dsvw.py",
-                  "uriBaseId": "%SRCROOT%"
-                },
-                "region": {
-                  "startLine": 35,
-                  "startColumn": 35,
-                  "endLine": 35,
-                  "endColumn": 74,
-                  "snippet": {
-                    "text": "                    content = str(pickle.loads(params[\"object\"].encode()))"
-                  }
-                }
-              }
-            }
-          ],
-          "fingerprints": {
-            "matchBasedId/v1": "009e44dbc5e9730d8a7a647cd7968223a18c1666a2f29744d59df54a622349d49beae4d03c07ffd00de2d696c42c7fedd39bdce77694aa3255dc2c08bb3503fd_0"
-          },
-          "properties": {}
-        },
-        {
-          "ruleId": "5c230ecf-7b83-33d5-a905-45c0847c9c04",
-          "kind": "fail",
-          "level": "warning",
-          "message": {
-            "text": "Detected a dynamic value being used with urllib. urllib supports 'file://' schemes, so a dynamic value controlled by a malicious actor may allow them to read arbitrary files. Audit uses of urllib calls to ensure user data cannot control the URLs, or consider using the 'requests' library instead."
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "dsvw.py",
-                  "uriBaseId": "%SRCROOT%"
-                },
-                "region": {
-                  "startLine": 37,
-                  "startColumn": 112,
-                  "endLine": 37,
-                  "endColumn": 150,
-                  "snippet": {
-                    "text": "                    content = (open(os.path.abspath(params[\"path\"]), \"rb\") if not \"://\" in params[\"path\"] else urllib.request.urlopen(params[\"path\"])).read().decode()"
-                  }
-                }
-              }
-            }
-          ],
-          "fingerprints": {
-            "matchBasedId/v1": "7fccff98adbb93a34ae377c2d7ef67de84a59f15556ab8420a4a21e0021ad5e7e1bbe655af2d539a8803e02df04bd2b212ba89d7af3f540a81f73a5ce35c4159_0"
+            "matchBasedId/v1": "72d1ec54b136c73abb17fbe9f1cf9c42211dea8c1ceae0c84a8d016d239a58e50df79d14b1e2123a0f1643a0f9e774395abdb2d8ea3309e5acffaf32f714a0dd_0"
           },
           "properties": {}
         },
@@ -952,6 +1031,68 @@
           "properties": {}
         },
         {
+          "ruleId": "37491dc5-25cc-3c02-8fd9-42ebb7971b86",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "Avoid using `pickle`, which is known to lead to code execution vulnerabilities. When unpickling, the serialized data could be manipulated to run arbitrary code. Instead, consider serializing the relevant data as JSON or a similar text-based serialization format."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "dsvw.py",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 35,
+                  "startColumn": 35,
+                  "endLine": 35,
+                  "endColumn": 74,
+                  "snippet": {
+                    "text": "                    content = str(pickle.loads(params[\"object\"].encode()))"
+                  }
+                }
+              }
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "af9488197958a79efa6deb4a9ec199aa6e67de62ca442cf5711b07d809c9eeb195695856f99111117b86af7d7ef61c47ba9a139dbf6719310617ae4933fd9f4c_0"
+          },
+          "properties": {}
+        },
+        {
+          "ruleId": "5c230ecf-7b83-33d5-a905-45c0847c9c04",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "Detected a dynamic value being used with urllib. urllib supports 'file://' schemes, so a dynamic value controlled by a malicious actor may allow them to read arbitrary files. Audit uses of urllib calls to ensure user data cannot control the URLs, or consider using the 'requests' library instead."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "dsvw.py",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 37,
+                  "startColumn": 112,
+                  "endLine": 37,
+                  "endColumn": 150,
+                  "snippet": {
+                    "text": "                    content = (open(os.path.abspath(params[\"path\"]), \"rb\") if not \"://\" in params[\"path\"] else urllib.request.urlopen(params[\"path\"])).read().decode()"
+                  }
+                }
+              }
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "7fccff98adbb93a34ae377c2d7ef67de84a59f15556ab8420a4a21e0021ad5e7e1bbe655af2d539a8803e02df04bd2b212ba89d7af3f540a81f73a5ce35c4159_0"
+          },
+          "properties": {}
+        },
+        {
           "ruleId": "94fd16b6-dcba-3658-ad4b-83e46673ac6a",
           "kind": "fail",
           "level": "warning",
@@ -983,7 +1124,7 @@
           "properties": {}
         },
         {
-          "ruleId": "8172b7eb-bdc6-33a8-86ac-12addbb9d54b",
+          "ruleId": "6d9c97b1-0ed8-3c78-8d4f-10f80030ce38",
           "kind": "fail",
           "level": "warning",
           "message": {
@@ -998,9 +1139,9 @@
                 },
                 "region": {
                   "startLine": 41,
-                  "startColumn": 51,
+                  "startColumn": 31,
                   "endLine": 41,
-                  "endColumn": 61,
+                  "endColumn": 41,
                   "snippet": {
                     "text": "                    content = lxml.etree.tostring(lxml.etree.parse(io.BytesIO(params[\"xml\"].encode()), lxml.etree.XMLParser(load_dtd=True, resolve_entities=True, no_network=False)), pretty_print=True).decode()"
                   }
@@ -1009,7 +1150,7 @@
             }
           ],
           "fingerprints": {
-            "matchBasedId/v1": "56a3d1743f5b96a16147c608c467ae2ea2741410df8f3a936e6f33fa357c2c37b7906769a3c183b485fd1be666a89090ff29c38b7900f0f35ffb95af73d23872_3"
+            "matchBasedId/v1": "56a3d1743f5b96a16147c608c467ae2ea2741410df8f3a936e6f33fa357c2c37b7906769a3c183b485fd1be666a89090ff29c38b7900f0f35ffb95af73d23872_2"
           },
           "properties": {}
         },
@@ -1049,7 +1190,7 @@
           "kind": "fail",
           "level": "warning",
           "message": {
-            "text": "Avoiding SQL string concatenation: untrusted input concatenated with raw SQL query can result in SQL Injection. In order to execute raw query safely, prepared statement should be used. SQLAlchemy provides TextualSQL to easily used prepared statement with named parameters. For complex SQL composition, use SQL Expression Language or Schema Definition Language. In most cases, SQLAlchemy ORM will be a better option."
+            "text": "Detected possible formatted SQL query. Use parameterized queries instead."
           },
           "locations": [
             {
@@ -1071,38 +1212,7 @@
             }
           ],
           "fingerprints": {
-            "matchBasedId/v1": "bce140e78e6579cdba141cbaa11f840cb8f1a03daa447e1e268fe2227fa52f0a25b1210fd01d7f2efc8d5eabcb6adbbc3c2467ed95ad7b554605a788c4e5cc53_0"
-          },
-          "properties": {}
-        },
-        {
-          "ruleId": "e6a4e9ae-e0e4-30f3-abb4-f6de8983c783",
-          "kind": "fail",
-          "level": "warning",
-          "message": {
-            "text": "Detected a dynamic value being used with urllib. urllib supports 'file://' schemes, so a dynamic value controlled by a malicious actor may allow them to read arbitrary files. Audit uses of urllib calls to ensure user data cannot control the URLs, or consider using the 'requests' library instead."
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "dsvw.py",
-                  "uriBaseId": "%SRCROOT%"
-                },
-                "region": {
-                  "startLine": 56,
-                  "startColumn": 154,
-                  "endLine": 56,
-                  "endColumn": 195,
-                  "snippet": {
-                    "text": "                    backup, sys.stdout, program, envs = sys.stdout, io.StringIO(), (open(params[\"include\"], \"rb\") if not \"://\" in params[\"include\"] else urllib.request.urlopen(params[\"include\"])).read(), {\"DOCUMENT_ROOT\": os.getcwd(), \"HTTP_USER_AGENT\": self.headers.get(\"User-Agent\"), \"REMOTE_ADDR\": self.client_address[0], \"REMOTE_PORT\": self.client_address[1], \"PATH\": path, \"QUERY_STRING\": query}"
-                  }
-                }
-              }
-            }
-          ],
-          "fingerprints": {
-            "matchBasedId/v1": "7fccff98adbb93a34ae377c2d7ef67de84a59f15556ab8420a4a21e0021ad5e7e1bbe655af2d539a8803e02df04bd2b212ba89d7af3f540a81f73a5ce35c4159_1"
+            "matchBasedId/v1": "9c6f8ce51488416f309d4e776e80f0856544e471c5d1507d0ab8fb0c1822d418f8fc55e8d05a57833c2ae37334646d56d4862052431c334012da3efa0c87d477_0"
           },
           "properties": {}
         },
@@ -1138,11 +1248,42 @@
           "properties": {}
         },
         {
-          "ruleId": "b1988e74-6154-3dac-a2a7-9575f2e23ad1",
+          "ruleId": "e6a4e9ae-e0e4-30f3-abb4-f6de8983c783",
           "kind": "fail",
           "level": "warning",
           "message": {
-            "text": "Detected the use of exec(). exec() can be dangerous if used to evaluate dynamic content. If this content can be input from outside the program, this may be a code injection vulnerability. Ensure evaluated content is not definable by external sources."
+            "text": "Detected a dynamic value being used with urllib. urllib supports 'file://' schemes, so a dynamic value controlled by a malicious actor may allow them to read arbitrary files. Audit uses of urllib calls to ensure user data cannot control the URLs, or consider using the 'requests' library instead."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "dsvw.py",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 56,
+                  "startColumn": 154,
+                  "endLine": 56,
+                  "endColumn": 195,
+                  "snippet": {
+                    "text": "                    backup, sys.stdout, program, envs = sys.stdout, io.StringIO(), (open(params[\"include\"], \"rb\") if not \"://\" in params[\"include\"] else urllib.request.urlopen(params[\"include\"])).read(), {\"DOCUMENT_ROOT\": os.getcwd(), \"HTTP_USER_AGENT\": self.headers.get(\"User-Agent\"), \"REMOTE_ADDR\": self.client_address[0], \"REMOTE_PORT\": self.client_address[1], \"PATH\": path, \"QUERY_STRING\": query}"
+                  }
+                }
+              }
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "7fccff98adbb93a34ae377c2d7ef67de84a59f15556ab8420a4a21e0021ad5e7e1bbe655af2d539a8803e02df04bd2b212ba89d7af3f540a81f73a5ce35c4159_1"
+          },
+          "properties": {}
+        },
+        {
+          "ruleId": "173990b5-d5a1-3852-98e8-85397bab8557",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "Dynamic execution using exec or eval."
           },
           "locations": [
             {
@@ -1155,7 +1296,7 @@
                   "startLine": 57,
                   "startColumn": 21,
                   "endLine": 57,
-                  "endColumn": 40,
+                  "endColumn": 25,
                   "snippet": {
                     "text": "                    exec(program, envs)"
                   }
@@ -1164,7 +1305,7 @@
             }
           ],
           "fingerprints": {
-            "matchBasedId/v1": "6f54d8a9bd155e0569776e965202ea7c8796684fc02e2dc6754f142b592006e2a02c487844ee744e7422e34721daad701c4bb5c9b70119ed65f2ad2ff50bfc7d_0"
+            "matchBasedId/v1": "8b726f25857bf6a5cf31b861f84528ee2c008dedc5b2bfcec5cfa4db14b7648bda3a7068a648244d47012dbfd3bf59261de17a8714ba87314d8362da75c81b23_0"
           },
           "properties": {}
         },
@@ -1353,6 +1494,226 @@
             "matchBasedId/v1": "2c1ec177e2cc1b5355b86510e1507c3c24d9bb6c59de55627ac94b24efe642781dbb784ace2624e5adf2d18a5e1e26af83a932567c642673d7fe3b4f2e356518_1"
           },
           "properties": {}
+        },
+        {
+          "ruleId": "e3470143-4055-3dda-a8d7-674c563a1b5f",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "SQL Injection Vulnerability via String-Based Query Construction"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "dsvw.py"
+                },
+                "region": {
+                  "startLine": 30,
+                  "startColumn": 36,
+                  "endLine": 30,
+                  "endColumn": 93,
+                  "snippet": {
+                    "text": "                    cursor.execute(\"SELECT id, username, name, surname FROM users WHERE id=\" + params[\"id\"])\n"
+                  }
+                },
+                "contextRegion": {
+                  "startLine": 29,
+                  "endLine": 31,
+                  "snippet": {
+                    "text": "                if \"id\" in params:\n                    cursor.execute(\"SELECT id, username, name, surname FROM users WHERE id=\" + params[\"id\"])\n                    content += \"<div><span>Result(s):</span></div><table><thead><th>id</th><th>username</th><th>name</th><th>surname</th></thead>%s</table>%s\" % (\"\".join(\"<tr>%s</tr>\" % \"\".join(\"<td>%s</td>\" % (\"-\" if _ is None else _) for _ in row) for row in cursor.fetchall()), HTML_POSTFIX)\n"
+                  }
+                }
+              }
+            }
+          ],
+          "partialFingerprints": {
+            "glog-pfp-ruleFileLineCode/v1": "77f48493f578f3b814e2133df4b3c5b90efe0e281b1d77b83368a45675ea71f8",
+            "glog-pfp-ruleFileCode/v1": "7caaecc29681da5cd77b8941ac06c940ea1d7510c37a958948cdc14217ef4247"
+          },
+          "fingerprints": {
+            "glog-fp-ruleFileCode/v1": "7caaecc29681da5cd77b8941ac06c940ea1d7510c37a958948cdc14217ef4247"
+          },
+          "properties": {
+            "issue_severity": "MEDIUM",
+            "issue_confidence": "MEDIUM"
+          }
+        },
+        {
+          "ruleId": "9f556f54-6c75-39b8-9afa-2b34c9d259d6",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "\"Vulnerability in Audit URL Open for Permitted Schemes\""
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "dsvw.py"
+                },
+                "region": {
+                  "startLine": 37,
+                  "startColumn": 112,
+                  "endLine": 37,
+                  "endColumn": 150,
+                  "snippet": {
+                    "text": "                    content = (open(os.path.abspath(params[\"path\"]), \"rb\") if not \"://\" in params[\"path\"] else urllib.request.urlopen(params[\"path\"])).read().decode()\n"
+                  }
+                },
+                "contextRegion": {
+                  "startLine": 36,
+                  "endLine": 38,
+                  "snippet": {
+                    "text": "                elif \"path\" in params:\n                    content = (open(os.path.abspath(params[\"path\"]), \"rb\") if not \"://\" in params[\"path\"] else urllib.request.urlopen(params[\"path\"])).read().decode()\n                elif \"domain\" in params:\n"
+                  }
+                }
+              }
+            }
+          ],
+          "partialFingerprints": {
+            "glog-pfp-ruleFileLineCode/v1": "24fb5f39197127a33b2a1c4778086da5a06e4792f1597112be317bcaf9631160",
+            "glog-pfp-ruleFileCode/v1": "b5792aeeb5f6281a3f1dbfe693eb5f24e6751f946b7a859b4bf067c29015fa98"
+          },
+          "fingerprints": {
+            "glog-fp-ruleFileCode/v1": "b5792aeeb5f6281a3f1dbfe693eb5f24e6751f946b7a859b4bf067c29015fa98"
+          },
+          "properties": {
+            "issue_severity": "MEDIUM",
+            "issue_confidence": "HIGH"
+          }
+        },
+        {
+          "ruleId": "ac9acc4a-ed2c-3c9a-924f-ff68f1aca537",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "Exec Usage Detected"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "dsvw.py"
+                },
+                "region": {
+                  "startLine": 57,
+                  "startColumn": 21,
+                  "endLine": 57,
+                  "endColumn": 40,
+                  "snippet": {
+                    "text": "                    exec(program, envs)\n"
+                  }
+                },
+                "contextRegion": {
+                  "startLine": 56,
+                  "endLine": 58,
+                  "snippet": {
+                    "text": "                    backup, sys.stdout, program, envs = sys.stdout, io.StringIO(), (open(params[\"include\"], \"rb\") if not \"://\" in params[\"include\"] else urllib.request.urlopen(params[\"include\"])).read(), {\"DOCUMENT_ROOT\": os.getcwd(), \"HTTP_USER_AGENT\": self.headers.get(\"User-Agent\"), \"REMOTE_ADDR\": self.client_address[0], \"REMOTE_PORT\": self.client_address[1], \"PATH\": path, \"QUERY_STRING\": query}\n                    exec(program, envs)\n                    content += sys.stdout.getvalue()\n"
+                  }
+                }
+              }
+            }
+          ],
+          "partialFingerprints": {
+            "glog-pfp-ruleFileLineCode/v1": "f8235ac504233fb4744ff3fb9d97a1d5aff1c9e874ec9538b2bf3342501c4375",
+            "glog-pfp-ruleFileCode/v1": "fd4c387c15b38faa8121ce2201429d2e25af124dcf33c8b79fc0f5351b2ab592"
+          },
+          "fingerprints": {
+            "glog-fp-ruleFileCode/v1": "fd4c387c15b38faa8121ce2201429d2e25af124dcf33c8b79fc0f5351b2ab592"
+          },
+          "properties": {
+            "issue_severity": "MEDIUM",
+            "issue_confidence": "HIGH"
+          }
+        },
+        {
+          "ruleId": "2ece73d0-2478-3100-8f03-a9dd4d03eae7",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "\"Vulnerability in URL Audit for Permitted Schemes\""
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "dsvw.py"
+                },
+                "region": {
+                  "startLine": 56,
+                  "startColumn": 154,
+                  "endLine": 56,
+                  "endColumn": 195,
+                  "snippet": {
+                    "text": "                    backup, sys.stdout, program, envs = sys.stdout, io.StringIO(), (open(params[\"include\"], \"rb\") if not \"://\" in params[\"include\"] else urllib.request.urlopen(params[\"include\"])).read(), {\"DOCUMENT_ROOT\": os.getcwd(), \"HTTP_USER_AGENT\": self.headers.get(\"User-Agent\"), \"REMOTE_ADDR\": self.client_address[0], \"REMOTE_PORT\": self.client_address[1], \"PATH\": path, \"QUERY_STRING\": query}\n"
+                  }
+                },
+                "contextRegion": {
+                  "startLine": 55,
+                  "endLine": 57,
+                  "snippet": {
+                    "text": "                elif \"include\" in params:\n                    backup, sys.stdout, program, envs = sys.stdout, io.StringIO(), (open(params[\"include\"], \"rb\") if not \"://\" in params[\"include\"] else urllib.request.urlopen(params[\"include\"])).read(), {\"DOCUMENT_ROOT\": os.getcwd(), \"HTTP_USER_AGENT\": self.headers.get(\"User-Agent\"), \"REMOTE_ADDR\": self.client_address[0], \"REMOTE_PORT\": self.client_address[1], \"PATH\": path, \"QUERY_STRING\": query}\n                    exec(program, envs)\n"
+                  }
+                }
+              }
+            }
+          ],
+          "partialFingerprints": {
+            "glog-pfp-ruleFileLineCode/v1": "003d1e2e9b4bde5fea987c722fec1ac872553cc64032d4bd553ce01f319bf0e5",
+            "glog-pfp-ruleFileCode/v1": "a0693866470397e5bfd11dd838f9dc19822a210c97d6404dc0a70969f448339e"
+          },
+          "fingerprints": {
+            "glog-fp-ruleFileCode/v1": "a0693866470397e5bfd11dd838f9dc19822a210c97d6404dc0a70969f448339e"
+          },
+          "properties": {
+            "issue_severity": "MEDIUM",
+            "issue_confidence": "HIGH"
+          }
+        },
+        {
+          "ruleId": "05f9c51c-145b-3241-ae7d-1f1334829e02",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "SQL Injection Vulnerability via String-Based Query Construction"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "dsvw.py"
+                },
+                "region": {
+                  "startLine": 67,
+                  "startColumn": 32,
+                  "endLine": 67,
+                  "endColumn": 70,
+                  "snippet": {
+                    "text": "                cursor.execute(\"SELECT * FROM users WHERE username='\" + re.sub(r\"[^\\w]\", \"\", params.get(\"username\", \"\")) + \"' AND password='\" + params.get(\"password\", \"\") + \"'\")\n"
+                  }
+                },
+                "contextRegion": {
+                  "startLine": 66,
+                  "endLine": 68,
+                  "snippet": {
+                    "text": "            elif path == \"/login\":\n                cursor.execute(\"SELECT * FROM users WHERE username='\" + re.sub(r\"[^\\w]\", \"\", params.get(\"username\", \"\")) + \"' AND password='\" + params.get(\"password\", \"\") + \"'\")\n                content += \"Welcome <b>%s</b><meta http-equiv=\\\"Set-Cookie\\\" content=\\\"SESSIONID=%s; path=/\\\"><meta http-equiv=\\\"refresh\\\" content=\\\"1; url=/\\\"/>\" % (re.sub(r\"[^\\w]\", \"\", params.get(\"username\", \"\")), \"\".join(random.sample(string.ascii_letters + string.digits, 20))) if cursor.fetchall() else \"The username and/or password is incorrect<meta http-equiv=\\\"Set-Cookie\\\" content=\\\"SESSIONID=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT\\\">\"\n"
+                  }
+                }
+              }
+            }
+          ],
+          "partialFingerprints": {
+            "glog-pfp-ruleFileLineCode/v1": "71f039593a7975b015fe9d6fbbc239f54759ca8d5cb969a337b7d7490ff9f6c0",
+            "glog-pfp-ruleFileCode/v1": "c30d2d65c9c1afcff66fcdd97644c9c13994ef332ec6f4a29da693f1f9cc3a35"
+          },
+          "fingerprints": {
+            "glog-fp-ruleFileCode/v1": "c30d2d65c9c1afcff66fcdd97644c9c13994ef332ec6f4a29da693f1f9cc3a35"
+          },
+          "properties": {
+            "issue_severity": "MEDIUM",
+            "issue_confidence": "MEDIUM"
+          }
         }
       ],
       "newlineSequences": [
